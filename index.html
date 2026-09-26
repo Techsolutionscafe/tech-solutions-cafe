@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tech Solution Cafe & Internet Cafe - Online and offline digital services.">
+<title>Tech Solution Cafe & Internet Cafe</title>
+<style>
+:root{
+  --orange:#ff7a00;
+  --orange2:#ff9d00;
+  --blue:#0867d8;
+  --dark:#101828;
+  --light:#f6f8fb;
+  --card:#ffffff;
+  --green:#16a34a;
+  --border:#e5e7eb;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--light);color:#172033;
+  line-height:1.55;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{
+  background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;
+  box-shadow:0 2px 14px rgba(0,0,0,.06)
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:10px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800}
+.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.brand span{font-size:16px}
+.navlinks{display:flex;gap:18px;align-items:center;font-size:14px}
+.navlinks a:hover{color:var(--blue)}
+.hero{
+  background:linear-gradient(135deg,#fff 0%,#eef6ff 55%,#fff5e8 100%);
+  padding:55px 0 42px;
+}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+.hero h1{margin:0 0 14px;font-size:clamp(34px,5vw,58px);line-height:1.08}
+.special{
+  font-family:"Old English Text MT","UnifrakturCook","UnifrakturMaguntia",fantasy;
+  font-weight:900;letter-spacing:.5px;
+}
+.hero h1 .special{color:#111}
+.hero p{font-size:18px;color:#4b5563;max-width:700px}
+.hero-logo{display:flex;justify-content:center}
+.hero-logo img{width:min(430px,90%);border-radius:50%;filter:drop-shadow(0 18px 25px rgba(0,0,0,.18))}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 17px;
+  border-radius:10px;font-weight:700;border:1px solid transparent;cursor:pointer
+}
+.btn-green{background:var(--green);color:#fff}.btn-blue{background:var(--blue);color:#fff}
+.btn-orange{background:var(--orange);color:#fff}.btn-light{background:#fff;border-color:var(--border)}
+.section{padding:55px 0}
+.section h2{text-align:center;margin:0 0 10px;font-size:32px}
+.section-sub{text-align:center;color:#667085;margin:0 auto 28px;max-width:760px}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.service{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;
+  box-shadow:0 6px 20px rgba(16,24,40,.06);transition:.2s;cursor:pointer
+}
+.service:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(16,24,40,.11)}
+.icon{font-size:34px;margin-bottom:10px}.service h3{margin:0 0 6px}.service p{margin:0;color:#667085;font-size:14px}
+.note{
+  background:#fff7ed;border:1px solid #fed7aa;border-radius:14px;padding:15px;margin-top:22px;color:#7c2d12
+}
+.contact{
+  background:#0f172a;color:#fff
+}
+.contact .section-sub{color:#cbd5e1}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-card{background:#182338;border:1px solid #2b3952;border-radius:16px;padding:22px}
+.contact-card h3{margin-top:0}
+.contact-card p{color:#cbd5e1}
+.suggest{
+  background:#fff;border-radius:16px;padding:22px;border:1px solid var(--border)
+}
+form{display:grid;gap:12px}
+input,textarea{
+  width:100%;padding:13px 14px;border:1px solid #d0d5dd;border-radius:10px;
+  font:inherit;background:#fff
+}
+textarea{min-height:130px;resize:vertical}
+footer{background:#0b1220;color:#cbd5e1;text-align:center;padding:24px 0;font-size:14px}
+.modal{
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,.62);z-index:100;
+  padding:20px;align-items:center;justify-content:center
+}
+.modal.open{display:flex}
+.modal-box{
+  background:#fff;width:min(720px,100%);max-height:88vh;overflow:auto;border-radius:18px;
+  padding:25px;position:relative
+}
+.close{position:absolute;right:15px;top:10px;border:0;background:#f2f4f7;border-radius:50%;width:38px;height:38px;font-size:22px;cursor:pointer}
+.modal-box h2{margin-top:0;color:var(--blue)}
+.detail-list{padding-left:20px}
+.detail-list li{margin:8px 0}
+.small{font-size:13px;color:#667085}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr}.hero-logo{order:-1}
+  .services{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+  .navlinks{display:none}.brand span{font-size:14px}
+  .services,.contact-grid{grid-template-columns:1fr}
+  .hero{padding-top:35px}.hero h1{font-size:38px}
+  .hero p{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <img src="logo.png" alt="Tech Solution Cafe logo">
+      <span>Tech Solution Cafe & Internet Cafe</span>
+    </a>
+    <nav class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="#suggest">Suggestion</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1><span class="special">Tech solutions cafe & Internet cafe</span></h1>
+      <p>Online aur offline digital services ke liye ek hi jagah. Kisi bhi service par click karke uski details dekhein aur seedhe WhatsApp, Call ya Gmail se contact karein.</p>
+      <div class="actions">
+        <a class="btn btn-green" href="https://wa.me/918540844244?text=Namaste%2C%20mujhe%20Tech%20Solution%20Cafe%20ki%20service%20ke%20baare%20me%20jaankari%20chahiye." target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a class="btn btn-blue" href="tel:+918540844244">📞 Call 8540844244</a>
+        <a class="btn btn-orange" href="mailto:akmth3532@gmail.com">✉️ Gmail</a>
+      </div>
+    </div>
+    <div class="hero-logo">
+      <img src="logo.png" alt="Tech Solution Cafe & Internet Cafe">
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <p class="section-sub">Neeche kisi bhi service par click karein — poori information ek pop-up me khul jayegi.</p>
+
+    <div class="services">
+      <article class="service" data-service="aadhaar"><div class="icon">🪪</div><h3>Aadhaar Card</h3><p>Aadhaar related online assistance.</p></article>
+      <article class="service" data-service="pan"><div class="icon">💳</div><h3>PAN Card</h3><p>PAN application and related services.</p></article>
+      <article class="service" data-service="voter"><div class="icon">🗳️</div><h3>Voter Card</h3><p>Voter related online services.</p></article>
+      <article class="service" data-service="dl"><div class="icon">🚘</div><h3>Driving Licence</h3><p>Learning and driving licence assistance.</p></article>
+      <article class="service" data-service="forms"><div class="icon">📝</div><h3>Online Forms</h3><p>Government and other online forms.</p></article>
+      <article class="service" data-service="printing"><div class="icon">🖨️</div><h3>Printing & Photocopy</h3><p>Print, scan, photocopy and document work.</p></article>
+      <article class="service" data-service="photo"><div class="icon">📸</div><h3>Photo & Documents</h3><p>Photo, PDF, scan and document assistance.</p></article>
+      <article class="service" data-service="railway"><div class="icon">🚆</div><h3>Railway Ticket</h3><p>Railway ticket booking assistance.</p></article>
+      <article class="service" data-service="education"><div class="icon">🎓</div><h3>Education Services</h3><p>Admission, scholarship and education forms.</p></article>
+      <article class="service" data-service="schemes"><div class="icon">🏛️</div><h3>Govt. Schemes</h3><p>Government scheme application assistance.</p></article>
+      <article class="service" data-service="mobile"><div class="icon">📱</div><h3>Mobile Recharge</h3><p>Mobile recharge and digital payment services.</p></article>
+      <article class="service" data-service="bill"><div class="icon">⚡</div><h3>Bill Payment</h3><p>Utility and bill payment assistance.</p></article>
+    </div>
+
+    <div class="note"><strong>Important:</strong> Government documents/services ki approval aur processing time संबंधित department ke rules, verification aur workload par depend kar sakta hai.</div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p class="section-sub">Service ke liye seedhe contact karein.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Tech Solution Cafe & Internet Cafe</h3>
+        <p>Online aur offline digital service assistance.</p>
+        <div class="actions">
+          <a class="btn btn-green" href="https://wa.me/918540844244" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a class="btn btn-blue" href="tel:+918540844244">📞 Call</a>
+          <a class="btn btn-orange" href="mailto:akmth3532@gmail.com">✉️ Gmail</a>
+        </div>
+        <p class="small">Phone: 8540844244<br>Email: akmth3532@gmail.com</p>
+      </div>
+      <div class="suggest" id="suggest">
+        <h3>Website me kuch change chahiye?</h3>
+        <p class="small">Apna suggestion bhejein. Submit karne par aapke email app me message ready ho jayega.</p>
+        <form id="suggestForm">
+          <input id="name" placeholder="Aapka naam" required>
+          <input id="contactNo" placeholder="Mobile number (optional)">
+          <textarea id="suggestion" placeholder="Kya change/add karna chahte hain?" required></textarea>
+          <button class="btn btn-orange" type="submit">✉️ Suggestion Send Karein</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  © 2026 Tech Solution Cafe & Internet Cafe — All rights reserved.
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <button class="close" id="closeBtn" aria-label="Close">×</button>
+    <div id="modalContent"></div>
+    <div class="actions">
+      <a class="btn btn-green" href="https://wa.me/918540844244" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a class="btn btn-blue" href="tel:+918540844244">📞 Call</a>
+      <a class="btn btn-orange" href="mailto:akmth3532@gmail.com">✉️ Gmail</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const details = {
+  aadhaar: {
+    title:"Aadhaar Card Services",
+    body:`<ul class="detail-list">
+      <li>Aadhaar related online application/assistance.</li>
+      <li>Details correction/update assistance where the service is available.</li>
+      <li>Document upload, form filling and status-related assistance.</li>
+      <li>Required documents and eligibility depend on the particular Aadhaar service.</li>
+    </ul>`
+  },
+  pan: {
+    title:"PAN Card Services",
+    body:`<ul class="detail-list">
+      <li>New PAN application assistance.</li>
+      <li>PAN correction/update assistance.</li>
+      <li>Document upload and online form filling.</li>
+      <li>Application/status related assistance.</li>
+    </ul>`
+  },
+  voter: {
+    title:"Voter Card Services",
+    body:`<ul class="detail-list">
+      <li>New voter registration assistance.</li>
+      <li>Name/details correction assistance.</li>
+      <li>Address-related update assistance where applicable.</li>
+      <li>Online form filling and application/status assistance.</li>
+    </ul>`
+  },
+  dl: {
+    title:"Driving Licence Services",
+    body:`<ul class="detail-list">
+      <li>Learning Licence application assistance.</li>
+      <li><strong>Learning Licence: service target mentioned by the cafe — 1 hour</strong>, subject to successful online processing/verification.</li>
+      <li>Driving Licence application and related online assistance.</li>
+      <li><strong>Final Driving Licence: service timeline mentioned by the cafe — up to 45 days</strong>; actual government processing/dispatch time can vary.</li>
+      <li>Required documents, test/verification and department rules may apply.</li>
+    </ul>`
+  },
+  forms: {
+    title:"Online Form Services",
+    body:`<ul class="detail-list">
+      <li>Government and non-government online forms.</li>
+      <li>Application form filling and document upload.</li>
+      <li>Admit card, result, recruitment and other online form assistance.</li>
+      <li>Application status and basic online guidance.</li>
+    </ul>`
+  },
+  printing: {
+    title:"Printing & Photocopy",
+    body:`<ul class="detail-list">
+      <li>Black & white / colour printing.</li>
+      <li>Photocopy and scanning.</li>
+      <li>PDF print and document preparation.</li>
+      <li>Document upload/download assistance.</li>
+    </ul>`
+  },
+  photo: {
+    title:"Photo & Document Services",
+    body:`<ul class="detail-list">
+      <li>Passport-size photo and basic photo preparation.</li>
+      <li>Photo/document resize and format assistance.</li>
+      <li>PDF creation, scan and document upload.</li>
+    </ul>`
+  },
+  railway: {
+    title:"Railway Ticket Services",
+    body:`<ul class="detail-list">
+      <li>Railway ticket booking assistance.</li>
+      <li>Journey details and passenger information entry.</li>
+      <li>Ticket-related online assistance.</li>
+    </ul>`
+  },
+  education: {
+    title:"Education Services",
+    body:`<ul class="detail-list">
+      <li>Admission and online application assistance.</li>
+      <li>Scholarship and education-related forms.</li>
+      <li>Document upload and application guidance.</li>
+    </ul>`
+  },
+  schemes: {
+    title:"Government Scheme Services",
+    body:`<ul class="detail-list">
+      <li>Online government scheme applications.</li>
+      <li>Form filling and document upload assistance.</li>
+      <li>Status and application-related guidance.</li>
+      <li>Eligibility depends on the specific scheme.</li>
+    </ul>`
+  },
+  mobile: {
+    title:"Mobile Recharge",
+    body:`<ul class="detail-list">
+      <li>Mobile recharge assistance.</li>
+      <li>Recharge plan selection and payment assistance.</li>
+    </ul>`
+  },
+  bill: {
+    title:"Bill Payment Services",
+    body:`<ul class="detail-list">
+      <li>Electricity and other supported utility bill payment assistance.</li>
+      <li>Payment receipt/status assistance.</li>
+    </ul>`
+  }
+};
+
+const modal=document.getElementById("modal");
+const modalContent=document.getElementById("modalContent");
+document.querySelectorAll(".service").forEach(card=>{
+  card.addEventListener("click",()=>{
+    const d=details[card.dataset.service];
+    modalContent.innerHTML=`<h2>${d.title}</h2>${d.body}`;
+    modal.classList.add("open");
+  });
+});
+document.getElementById("closeBtn").onclick=()=>modal.classList.remove("open");
+modal.addEventListener("click",e=>{if(e.target===modal)modal.classList.remove("open")});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")modal.classList.remove("open")});
+
+document.getElementById("suggestForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const name=document.getElementById("name").value.trim();
+  const phone=document.getElementById("contactNo").value.trim();
+  const suggestion=document.getElementById("suggestion").value.trim();
+  const subject=encodeURIComponent("Website Suggestion - Tech Solution Cafe");
+  const body=encodeURIComponent(
+    `Name: ${name}\nMobile: ${phone || "Not provided"}\n\nSuggestion:\n${suggestion}`
+  );
+  window.location.href=`mailto:akmth3532@gmail.com?subject=${subject}&body=${body}`;
+});
+</script>
+</body>
+</html>
