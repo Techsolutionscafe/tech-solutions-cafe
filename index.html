@@ -69,7 +69,7 @@ input:focus,textarea:focus{outline:3px solid #075dcc20;border-color:#075dcc}
 footer{background:linear-gradient(135deg,#071c3b,#0b3d91);padding:30px 15px}
 @media(max-width:650px){.form-grid,.about-points{grid-template-columns:1fr}.service-card h3{font-size:19px}.actions .btn{width:calc(50% - 5px);text-align:center}.suggest,.feedback-box,.about-box{padding:19px}}
 
-\n/* Final professional polish */\nhtml{scroll-behavior:smooth}.hero-pills{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:18px}.hero-pills span{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.28);padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;backdrop-filter:blur(8px)}.logo{display:block;width:min(390px,88vw);height:auto;margin:0 auto;border-radius:24px;background:#fff;box-shadow:0 20px 55px #00112e70}.service-card{position:relative}.service-card:after{content:'VIEW DETAILS →';position:absolute;right:16px;top:17px;font-size:10px;font-weight:900;letter-spacing:.7px;color:#075dcc;background:#edf6ff;border-radius:999px;padding:6px 8px}.service-btn{position:relative;z-index:3}.service-modal{display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;padding:16px}.service-modal.show{display:flex}.service-modal-backdrop{position:absolute;inset:0;background:rgba(3,18,38,.72);backdrop-filter:blur(6px)}.service-modal-dialog{position:relative;z-index:2;width:min(650px,96vw);max-height:88vh;overflow:auto;background:#fff;border-radius:26px;padding:27px;box-shadow:0 30px 90px #0007;animation:modalIn .18s ease}.modal-close{position:absolute;right:14px;top:13px;width:42px;height:42px;padding:0;border-radius:50%;background:#eef5ff;color:#173b5d;font-size:28px;cursor:pointer}.modal-service-icon{width:72px;height:72px;border-radius:20px;background:#eaf4ff;display:flex;align-items:center;justify-content:center;font-size:39px;margin-bottom:14px}.service-modal-dialog h2{text-align:left;margin:0 45px 8px 0}.service-modal-dialog p{color:#5c6e86;line-height:1.65}.service-modal-dialog ul{padding-left:22px;color:#34445e;line-height:1.6}.service-modal-dialog li{margin:6px 0}.modal-open{overflow:hidden}@keyframes modalIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}\n</style>
+\n/* Final professional polish */\nhtml{scroll-behavior:smooth}.service-card .service-content ul,.service-card .service-btn{display:none}.hero-pills{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:18px}.hero-pills span{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.28);padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;backdrop-filter:blur(8px)}.logo{display:block;width:min(390px,88vw);height:auto;margin:0 auto;border-radius:24px;background:#fff;box-shadow:0 20px 55px #00112e70}.service-card{position:relative}.service-card:after{content:'VIEW DETAILS →';position:absolute;right:16px;top:17px;font-size:10px;font-weight:900;letter-spacing:.7px;color:#075dcc;background:#edf6ff;border-radius:999px;padding:6px 8px}.service-btn{position:relative;z-index:3}.service-modal{display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;padding:16px}.service-modal.show{display:flex}.service-modal-backdrop{position:absolute;inset:0;background:rgba(3,18,38,.72);backdrop-filter:blur(6px)}.service-modal-dialog{position:relative;z-index:2;width:min(650px,96vw);max-height:88vh;overflow:auto;background:#fff;border-radius:26px;padding:27px;box-shadow:0 30px 90px #0007;animation:modalIn .18s ease}.modal-close{position:absolute;right:14px;top:13px;width:42px;height:42px;padding:0;border-radius:50%;background:#eef5ff;color:#173b5d;font-size:28px;cursor:pointer}.modal-service-icon{width:72px;height:72px;border-radius:20px;background:#eaf4ff;display:flex;align-items:center;justify-content:center;font-size:39px;margin-bottom:14px}.service-modal-dialog h2{text-align:left;margin:0 45px 8px 0}.service-modal-dialog p{color:#5c6e86;line-height:1.65}.service-modal-dialog ul{padding-left:22px;color:#34445e;line-height:1.6}.service-modal-dialog li{margin:6px 0}.modal-open{overflow:hidden}@keyframes modalIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}\n</style>
 </head>
 <body>
 <header>
@@ -283,14 +283,6 @@ function submitTscFeedback(){
 function rf(){const a=gf(),s=document.getElementById('ratingSummary'),b=document.getElementById('feedbackList');if(!a.length){s.textContent='अभी कोई rating नहीं है।';b.innerHTML='';return}const avg=a.reduce((q,x)=>q+x.rating,0)/a.length;s.textContent='⭐ '+avg.toFixed(1)+'/5 • '+a.length+' Reviews';b.innerHTML=a.map(x=>'<div class="feedback-item"><b>'+escf(x.name)+'</b><br>'+('⭐'.repeat(x.rating))+('☆'.repeat(5-x.rating))+'<br>'+escf(x.text)+'</div>').join('')}
 document.addEventListener('DOMContentLoaded',rf);
 </script>
-<script>
-function openServiceRequest(btn){
-  const card=btn.closest('.service-card');
-  const service=card ? card.getAttribute('data-service') : 'Service';
-  const msg='Service Request\nService: '+service+'\nI want to know more about this service';
-  window.open('https://wa.me/918540844244?text='+encodeURIComponent(msg),'_blank');
-}
-</script>
 
 <script>
 function sendSuggestion(e){
@@ -307,67 +299,12 @@ function sendSuggestion(e){
 
 
 <footer><b>𝕿𝖊𝖈𝖍 𝖘𝖔𝖑𝖚𝖙𝖎𝖔𝖓𝖘 𝖈𝖆𝖋𝖊 & 𝕴𝖓𝖙𝖊𝖗𝖓𝖊𝖙 𝖈𝖆𝖋𝖊</b><br>📞 8540844244 • ✉️ akmth3532@gmail.com</footer>
-<script>
-function sendSuggestion(e){
-  e.preventDefault();
-  const n=document.getElementById('name').value.trim();
-  const p=document.getElementById('phone').value.trim();
-  const s=document.getElementById('suggestion').value.trim();
-  if(!n || !/^[0-9]{10}$/.test(p) || !s){alert('कृपया नाम, सही 10-digit phone number और suggestion भरें।');return}
-  const msg='Website Suggestion / Change\nName: '+n+'\nPhone: '+p+'\nSuggestion: '+s;
-  window.open('https://wa.me/918540844244?text='+encodeURIComponent(msg),'_blank');
-}
-</script>
 
-
-
-
-<h2>⭐ Customer Feedback & Rating</h2>
-<div id="ratingSummary" class="rating-summary">अभी कोई rating नहीं है।</div>
-<p>हमारी service कैसी लगी? अपनी rating और feedback जरूर दें।</p>
-<div class="star-rating">
-<input id="s5" type="radio" name="tsc_rating" value="5"><label for="s5">★</label>
-<input id="s4" type="radio" name="tsc_rating" value="4"><label for="s4">★</label>
-<input id="s3" type="radio" name="tsc_rating" value="3"><label for="s3">★</label>
-<input id="s2" type="radio" name="tsc_rating" value="2"><label for="s2">★</label>
-<input id="s1" type="radio" name="tsc_rating" value="1"><label for="s1">★</label>
-</div>
-<div class="form-grid">
-<input id="feedbackName" placeholder="आपका नाम" required>
-<input id="feedbackPhone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number" required>
-</div>
-<textarea id="feedbackText" placeholder="अपना feedback लिखें..." required></textarea>
-<button type="button" class="primary-btn" onclick="submitTscFeedback()">⭐ Feedback Submit करें</button>
-<div id="feedbackMsg"></div><div id="feedbackList"></div>
-</section><script>
-function gf(){try{return JSON.parse(localStorage.getItem('tsc_feedback_public')||'[]')}catch(e){return[]}}
-function sf(a){localStorage.setItem('tsc_feedback_public',JSON.stringify(a))}
-function escf(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
-function submitTscFeedback(){
- const r=document.querySelector('input[name="tsc_rating"]:checked'),n=document.getElementById('feedbackName').value.trim(),p=document.getElementById('feedbackPhone').value.trim(),x=document.getElementById('feedbackText').value.trim();
- if(!r){alert('कृपया 1 से 5 Star rating चुनें।');return} if(!n){alert('कृपया अपना नाम लिखें।');return} if(!/^[0-9]{10}$/.test(p)){alert('कृपया सही 10-digit phone number डालें।');return} if(!x){alert('कृपया feedback लिखें।');return}
- const a=gf();a.unshift({name:n,rating:+r.value,text:x});sf(a.slice(0,100));
- const msg='Customer Feedback & Rating\nName: '+n+'\nPhone: '+p+'\nRating: '+r.value+'/5\nFeedback: '+x;
- window.open('https://wa.me/918540844244?text='+encodeURIComponent(msg),'_blank');
- document.getElementById('feedbackName').value='';document.getElementById('feedbackPhone').value='';document.getElementById('feedbackText').value='';document.querySelectorAll('input[name="tsc_rating"]').forEach(x=>x.checked=false);document.getElementById('feedbackMsg').textContent='धन्यवाद! आपका feedback WhatsApp पर भेजने के लिए तैयार है।';rf()
-}
-function rf(){const a=gf(),s=document.getElementById('ratingSummary'),b=document.getElementById('feedbackList');if(!a.length){s.textContent='अभी कोई rating नहीं है।';b.innerHTML='';return}const avg=a.reduce((q,x)=>q+x.rating,0)/a.length;s.textContent='⭐ '+avg.toFixed(1)+'/5 • '+a.length+' Reviews';b.innerHTML=a.map(x=>'<div class="feedback-item"><b>'+escf(x.name)+'</b><br>'+('⭐'.repeat(x.rating))+('☆'.repeat(5-x.rating))+'<br>'+escf(x.text)+'</div>').join('')}
-document.addEventListener('DOMContentLoaded',rf);
-</script>
-<script>
-function openServiceRequest(btn){
-  const card=btn.closest('.service-card');
-  const service=card ? card.getAttribute('data-service') : 'Service';
-  const msg='Service Request\nService: '+service+'\nI want to know more about this service';
-  window.open('https://wa.me/918540844244?text='+encodeURIComponent(msg),'_blank');
-}
-</script>
 <script>
 let activeServiceCard=null;
 function openServiceModal(card){activeServiceCard=card;document.getElementById('modalServiceTitle').textContent=card.getAttribute('data-service')||'Service';document.getElementById('modalServiceIcon').textContent=card.querySelector('.service-icon')?.textContent.trim()||'📲';document.getElementById('modalServiceList').innerHTML=card.querySelector('.service-content ul')?.innerHTML||'';document.getElementById('serviceModal').classList.add('show');document.getElementById('serviceModal').setAttribute('aria-hidden','false');document.body.classList.add('modal-open')}
 function closeServiceModal(){const m=document.getElementById('serviceModal');m.classList.remove('show');m.setAttribute('aria-hidden','true');document.body.classList.remove('modal-open');activeServiceCard=null}
 function requestServiceFromModal(){if(!activeServiceCard)return;const service=activeServiceCard.getAttribute('data-service')||'Service';const msg='Service Request\nService: '+service+'\nI want to know more about this service';window.open('https://wa.me/918540844244?text='+encodeURIComponent(msg),'_blank')}
-function openServiceRequest(btn){const card=btn.closest('.service-card');const service=card?card.getAttribute('data-service'):'Service';const msg='Service Request\nService: '+service+'\nI want to know more about this service';window.open('https://wa.me/918540844244?text='+encodeURIComponent(msg),'_blank')}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeServiceModal()});
 </script>
 </body>
