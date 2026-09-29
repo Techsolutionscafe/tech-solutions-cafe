@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tech Solutions Cafe & Internet Cafe | Digital Services</title>
+<meta name="description" content="Tech Solutions Cafe & Internet Cafe — online, digital, document, printing and customer support services.">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,system-ui,sans-serif;background:#f4f8ff;color:#17233a}
+header{background:linear-gradient(135deg,#ff8a00,#006ee6);color:#fff;text-align:center;padding:18px 14px 28px}
+.logo{width:min(300px,80vw);border-radius:22px;background:#fff;box-shadow:0 12px 35px #001c4770}
+.brand{font-size:clamp(22px,5.5vw,44px);font-weight:900;margin:14px 0 5px;text-shadow:2px 3px 0 #06356b}
+.tag{font-weight:700}.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px}
+.btn{padding:12px 15px;border-radius:999px;text-decoration:none;color:#fff;font-weight:800;box-shadow:0 5px 12px #0003}
+.wa{background:#16a34a}.call{background:#e11d48}.mail{background:#7c3aed}.community{background:#075e54}.channel{background:#075dcc}
+main{max-width:1100px;margin:auto;padding:20px 14px 70px}.notice,.suggest{background:#fff;padding:17px;border-radius:16px;box-shadow:0 7px 22px #173b5d18;margin-bottom:20px}
+.notice{border-left:6px solid #ff8a00}h2{text-align:center;color:#075dcc}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:15px}
+.card{background:#fff;border:2px solid #dbeafe;border-radius:18px;padding:17px;cursor:pointer;box-shadow:0 8px 22px #173b5d14}
+.card h3{color:#075dcc;margin:0 0 8px}.card p{color:#65748a;margin:0}.details{display:none;border-top:1px dashed #bbb;margin-top:12px;padding-top:8px}.open .details{display:block}
+.details li{margin:7px 0}input,textarea{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:10px;margin:7px 0 12px;font:inherit}textarea{min-height:110px}
+button{padding:12px 18px;border:0;border-radius:10px;background:#075dcc;color:#fff;font-weight:800}footer{background:#09264a;color:#fff;text-align:center;padding:25px 15px}
+
+.feedback-box{background:linear-gradient(135deg,#fff,#f4f9ff);padding:24px;border-radius:20px;box-shadow:0 10px 28px rgba(20,65,110,.12);margin:28px 0;border:1px solid #dbeafe}
+.star-rating{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:5px;margin:12px 0}
+.star-rating input{display:none}.star-rating label{font-size:36px;cursor:pointer;color:#cbd5e1}
+.star-rating label:hover,.star-rating label:hover~label,.star-rating input:checked~label{color:#f59e0b}
+.feedback-box textarea{width:100%;min-height:95px;box-sizing:border-box;padding:12px;border:1px solid #cbd5e1;border-radius:12px}
+.feedback-item{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:13px;margin:9px 0}
+.rating-summary{font-size:18px;font-weight:700;margin:8px 0 14px}
+
+/* Professional redesign */
+body{background:linear-gradient(180deg,#eef6ff 0%,#f8fbff 45%,#eef4ff 100%);color:#14233d}
+header{background:linear-gradient(135deg,#0b2a5b 0%,#075dcc 48%,#00a6a6 100%);padding:28px 14px 34px;position:relative;overflow:hidden}
+header:before{content:"";position:absolute;inset:-80px;background:radial-gradient(circle at 15% 20%,#ffffff30,transparent 28%),radial-gradient(circle at 90% 80%,#00e0c040,transparent 30%)}
+header>*{position:relative}
+.logo{width:min(300px,76vw);border-radius:24px;box-shadow:0 18px 45px #00112e70}
+.brand{font-size:clamp(24px,5.5vw,46px);margin-top:16px}
+.tag{font-size:16px;letter-spacing:.3px}
+.actions{margin-top:20px}
+.btn{padding:13px 17px;border-radius:12px;transition:.2s;box-shadow:0 8px 18px #00112e35}
+.btn:hover{transform:translateY(-2px)}
+main{max-width:1180px;padding:28px 16px 70px}
+.notice{background:#fff;border-left:6px solid #00a6a6;box-shadow:0 12px 30px #153c6314}
+h2{color:#0b3d91;margin:8px 0 12px}
+.grid{gap:18px}
+.service-card{background:rgba(255,255,255,.96);border:1px solid #dbe8f7;border-radius:22px;padding:0;overflow:hidden;box-shadow:0 10px 28px #173b5d12;transition:transform .2s,box-shadow .2s;border-top:4px solid #075dcc}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 18px 38px #173b5d20}
+.service-icon{font-size:36px;width:66px;height:66px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:#eaf4ff;margin:18px 18px 0}
+.service-content{padding:0 18px 18px}
+.service-card h3{font-size:20px;color:#0b3d91;margin:14px 0 7px}
+.service-card p{color:#64748b;margin:0 0 12px;line-height:1.5}
+.service-card ul{margin:0 0 16px;padding-left:20px;color:#34445e;line-height:1.55}
+.service-card li{margin:4px 0}
+.service-btn,.primary-btn{width:100%;background:linear-gradient(135deg,#075dcc,#00a6a6);border-radius:12px;padding:13px 16px;cursor:pointer;box-shadow:0 8px 16px #075dcc25}
+.service-btn:hover,.primary-btn:hover{filter:brightness(1.05)}
+.suggest,.feedback-box,.about-box{background:rgba(255,255,255,.97);border:1px solid #dce9f7;border-radius:22px;box-shadow:0 12px 32px #173b5d12;padding:24px;margin:28px 0}
+.section-kicker{font-size:12px;font-weight:900;letter-spacing:2px;color:#00a6a6;margin-bottom:5px}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+label{display:block;font-weight:800;font-size:14px;color:#29415f;margin:5px 0}
+input,textarea{border:1px solid #cddbea;background:#fbfdff}
+input:focus,textarea:focus{outline:3px solid #075dcc20;border-color:#075dcc}
+.about-box p{line-height:1.7;color:#52657f}
+.about-points{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.about-points div{background:#f1f8ff;border:1px solid #d8e9fa;border-radius:16px;padding:15px}
+.about-points b{display:block;color:#075dcc;margin-bottom:6px}
+.about-points span{font-size:14px;color:#5c6e86}
+.star-rating{justify-content:flex-start;background:#f7fbff;border:1px solid #e0ebf7;padding:8px 12px;border-radius:14px}
+.feedback-item{box-shadow:0 4px 14px #173b5d0b}
+footer{background:linear-gradient(135deg,#071c3b,#0b3d91);padding:30px 15px}
+@media(max-width:650px){.form-grid,.about-points{grid-template-columns:1fr}.service-card h3{font-size:19px}.actions .btn{width:calc(50% - 5px);text-align:center}.suggest,.feedback-box,.about-box{padding:19px}}
+
+</style>
+</head>
+<body>
+<header>
+<div class="logo" role="img" aria-label="Tech Solution Cafe logo">
+  <div style="font-size:28px;font-weight:900;color:#075dcc;padding:22px 12px">TECH<br><span style="color:#00a6a6;font-size:18px">SOLUTIONS CAFE</span></div>
+</div>
+<div class="brand">𝕿𝖊𝖈𝖍 𝖘𝖔𝖑𝖚𝖙𝖎𝖔𝖓𝖘 𝖈𝖆𝖋𝖊 & 𝕴𝖓𝖙𝖊𝖗𝖓𝖊𝖙 𝖈𝖆𝖋𝖊</div>
+<div class="tag">Your Work • Our Priority</div>
+<div class="actions">
+<a class="btn wa" href="https://wa.me/918540844244?text=Hello%20Tech%20Solution%20Cafe" target="_blank">💬 WhatsApp</a>
+<a class="btn call" href="tel:+918540844244">📞 Call</a>
+<a class="btn mail" href="mailto:akmth3532@gmail.com">✉️ Gmail</a>
+<a class="btn community" href="https://chat.whatsapp.com/KJKEhDUmaO7G5tROGFYjaw" target="_blank">👥 WhatsApp Community</a>
+<a class="btn channel" href="https://whatsapp.com/channel/0029Vb7jqlz90x2mGivL4U1V" target="_blank">📢 WhatsApp Channel</a>
+</div>
+</header>
+<main>
+<div class="notice"><b>📌 सभी Online Services:</b> किसी भी service पर click/tap करके उसकी पूरी details देखें। सरकारी सेवा की उपलब्धता और समय संबंधित विभाग/portal पर निर्भर हो सकता है।</div>
+<h2>हमारी Online & Digital Services</h2>
+<div class="grid">
+<article class="service-card" data-service="PAN Card Services">
+      <div class="service-icon">🪪</div>
+      <div class="service-content">
+        <h3>PAN Card Services</h3>
+        <p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+        <ul><li>New PAN Card Apply</li><li>PAN Card Correction — Name, DOB, Father Name, Address, Mobile, Email</li><li>PAN Apply Without Document</li><li>PAN Full Name & Full Father Name Correction (Aadhaar Based)</li><li>PAN Card Original PDF Download</li><li>Re-Print PVC Card by Post Delivery</li></ul>
+        <button type="button" class="service-btn" onclick="openServiceRequest(this)">📲 Service Request करें</button>
+      </div>
+    </article>
+<article class="service-card" data-service="Voter Card Service">
+      <div class="service-icon">🗳️</div>
+      <div class="service-content">
+        <h3>Voter Card Service</h3>
+        <p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+        <ul><li>New Voter Card Apply</li><li>Voter Card Correction</li><li>Voter ID Mobile Number Link</li></ul>
+        <button type="button" class="service-btn" onclick="openServiceRequest(this)">📲 Service Request करें</button>
+      </div>
+    </article>
+<article class="service-card" data-service="e-SHRAM Card Service">
+      <div class="service-icon">💼</div>
+      <div class="service-content">
+        <h3>e-SHRAM Card Service</h3>
+        <p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+        <ul><li>Aadhaar Number → e-Shram Card PDF</li><li>Aadhaar Number → e-Shram Mobile Number Link</li></ul>
+        <button type="button" class="service-btn" onclick="openServiceRequest(this)">📲 Service Request करें</button>
+      </div>
+    </article>
+<article class="service-card" data-service="Exam & Certificate Services">
+      <div class="service-icon">📚</div>
+      <div class="service-content">
+        <h3>Exam & Certificate Services</h3>
+        <p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+        <ul><li>CSC TEC Exam Pass</li><li>Learning Licence Exam Pass</li><li>Aadhaar e-Learning LMS Certificate</li><li>Aadhaar NSEIT RO Pending Approval</li></ul>
+        <button type="button" class="service-btn" onclick="openServiceRequest(this)">📲 Service Request करें</button>
+      </div>
+    </article>
+<article class="service-card" data-service="Aadhaar Services">
+      <div class="service-icon">🪪</div>
+      <div class="service-content">
+        <h3>Aadhaar Services</h3>
+        <p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+        <ul><li>Aadhaar Correction — Father/Husband Name & Address</li><li>Aadhaar-related online services</li><li>PVC Aadhaar Card Print</li></ul>
+        <button type="button" class="service-btn" onclick="openServiceRequest(this)">📲 Service Request करें</button>
+      </div>
+    </article>
+<article class="service-card" data-service="Driving Licence">
+      <div class="service-icon">🚗</div>
+      <div class="service-content">
+        <h3>Driving Licence</h3>
+        <p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+        <ul><li>New Driving Licence Apply</li><li>Learning Licence services</li><li>Driving Licence Correction / Renewal</li></ul>
+        <button type="button" class="service-btn" onclick="openServiceRequest(this)">📲 Service Request करें</button>
+      </div>
+    </article>
+<article class="service-card" data-service="Certificates">
+      <div class="service-icon">📜</div>
+      <div class="service-content">
+        <h3>Certificates</h3>
+        <p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+        <ul><li>Passport Apply</li><li>जाति प्रमाण पत्र</li><li>आवासीय प्रमाण पत्र</li><li>आय प्रमाण पत्र</li><li>आचरण प्रमाण पत्र</li></ul>
+        <button type="button" class="service-btn" onclick="openServiceRequest(this)">📲 Service Request करें</button>
+      </div>
+    </article>
+<article class="service-card" data-service="Land & Revenue Services">
+      <div class="service-icon">🌾</div>
+      <div class="service-content">
+        <h3>Land & Revenue Services</h3>
+        <p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+        <ul><li>जमीन का रसीद</li><li>दाखिल-खारिज</li></ul>
+        <button type="button" class="service-btn" onclick="openServiceRequest(this)">📲 Service Request करें</button>
+      </div>
+    </article>
+<article class="service-card" data-service="Government & Welfare Services">
+      <div class="service-icon">💳</div>
+      <div class="service-content">
+        <h3>Government & Welfare Services</h3>
+        <p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+        <ul><li>वृद्धा पेंशन योजना Online Apply</li><li>सभी पेंशन का KYC</li><li>PM किसान e-KYC</li><li>आयुष्मान कार्ड Print</li></ul>
+        <button type="button" class="service-btn" onclick="openServiceRequest(this)">📲 Service Request करें</button>
+      </div>
+    </article>
+<article class="service-card" data-service="Printing & Digital Services">
+      <div class="service-icon">🖨️</div>
+      <div class="service-content">
+        <h3>Printing & Digital Services</h3>
+        <p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+        <ul><li>फोटो कॉपी — रंगीन एवं सादा</li><li>लेमिनेशन</li><li>प्रिंट आउट — रंगीन एवं सादा</li><li>Passport Size Photo</li><li>Resume बनाना</li><li>Bio Data बनाना</li><li>Aadhaar Udyog Registration</li></ul>
+        <button type="button" class="service-btn" onclick="openServiceRequest(this)">📲 Service Request करें</button>
+      </div>
+    </article>
+<article class="service-card" data-service="Education Services">
+      <div class="service-icon">🎓</div>
+      <div class="service-content">
+        <h3>Education Services</h3>
+        <p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+        <ul><li>Student APAAR Card</li><li>Scholarship Online Apply</li><li>Online Admission & Exam Forms</li></ul>
+        <button type="button" class="service-btn" onclick="openServiceRequest(this)">📲 Service Request करें</button>
+      </div>
+    </article>
+<article class="service-card" data-service="Employment & PF Services">
+      <div class="service-icon">👨‍💼</div>
+      <div class="service-content">
+        <h3>Employment & PF Services</h3>
+        <p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+        <ul><li>PF काम</li><li>Online Job / Recruitment Forms</li><li>Government Scheme Forms</li></ul>
+        <button type="button" class="service-btn" onclick="openServiceRequest(this)">📲 Service Request करें</button>
+      </div>
+    </article>
+<article class="service-card" data-service="Other Online Services">
+      <div class="service-icon">📱</div>
+      <div class="service-content">
+        <h3>Other Online Services</h3>
+        <p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+        <ul><li>Mobile Recharge</li><li>Bill Payment</li><li>Railway Ticket</li><li>Online Form Filling</li><li>Photo / Document Scan</li><li>Email / Online Application Assistance</li></ul>
+        <button type="button" class="service-btn" onclick="openServiceRequest(this)">📲 Service Request करें</button>
+      </div>
+    </article>
+</div>
+
+<section class="suggest">
+  <div class="section-kicker">DIRECT WHATSAPP</div>
+  <h2>💡 Website Suggestion / Change</h2>
+  <p>कोई नई service जोड़नी हो, जानकारी बदलनी हो या website में कोई सुधार सुझाना हो तो नीचे की जानकारी भरकर सीधे WhatsApp पर भेजें।</p>
+  <form onsubmit="sendSuggestion(event)">
+    <div class="form-grid">
+      <div><label for="name">Customer Name *</label><input id="name" placeholder="अपना नाम लिखें" required></div>
+      <div><label for="phone">Phone Number *</label><input id="phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number" required></div>
+    </div>
+    <label for="suggestion">Suggestion *</label>
+    <textarea id="suggestion" placeholder="अपना suggestion / बदलाव लिखें..." required></textarea>
+    <button type="submit" class="primary-btn">💬 WhatsApp पर Suggestion भेजें</button>
+  </form>
+</section>
+</main>
+<footer><b>𝕿𝖊𝖈𝖍 𝖘𝖔𝖑𝖚𝖙𝖎𝖔𝖓𝖘 𝖈𝖆𝖋𝖊 & 𝕴𝖓𝖙𝖊𝖗𝖓𝖊𝖙 𝖈𝖆𝖋𝖊</b><br>📞 8540844244 • ✉️ akmth3532@gmail.com</footer>
+<script>
+function sendSuggestion(e){
+  e.preventDefault();
+  const n=document.getElementById('name').value.trim();
+  const p=document.getElementById('phone').value.trim();
+  const s=document.getElementById('suggestion').value.trim();
+  if(!n || !/^[0-9]{10}$/.test(p) || !s){alert('कृपया नाम, सही 10-digit phone number और suggestion भरें।');return}
+  const msg='Website Suggestion / Change\nName: '+n+'\nPhone: '+p+'\nSuggestion: '+s;
+  window.open('https://wa.me/918540844244?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
+
+
+
+<footer><b>𝕿𝖊𝖈𝖍 𝖘𝖔𝖑𝖚𝖙𝖎𝖔𝖓𝖘 𝖈𝖆𝖋𝖊 & 𝕴𝖓𝖙𝖊𝖗𝖓𝖊𝖙 𝖈𝖆𝖋𝖊</b><br>📞 8540844244 • ✉️ akmth3532@gmail.com</footer>
+<script>
+function sendSuggestion(e){
+  e.preventDefault();
+  const n=document.getElementById('name').value.trim();
+  const p=document.getElementById('phone').value.trim();
+  const s=document.getElementById('suggestion').value.trim();
+  if(!n || !/^[0-9]{10}$/.test(p) || !s){alert('कृपया नाम, सही 10-digit phone number और suggestion भरें।');return}
+  const msg='Website Suggestion / Change\nName: '+n+'\nPhone: '+p+'\nSuggestion: '+s;
+  window.open('https://wa.me/918540844244?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
+
+
+
+<section class="about-box">
+  <div class="section-kicker">ABOUT US</div>
+  <h2>About Tech Solutions Cafe</h2>
+  <p><strong>Tech Solutions Cafe & Internet Cafe</strong> एक customer-focused digital service center है, जहाँ online applications, document assistance, government-related digital services, printing और everyday internet services को सरल और सुविधाजनक तरीके से उपलब्ध कराने का प्रयास किया जाता है।</p>
+  <p>हमारा उद्देश्य है कि customers को स्पष्ट जानकारी, आसान request process और responsive support मिले। किसी service की जानकारी चाहिए या assistance की जरूरत है, आप बिना website registration के सीधे WhatsApp के माध्यम से request भेज सकते हैं।</p>
+  <div class="about-points">
+    <div><b>⚡ Simple Process</b><span>बिना account बनाए service request करें।</span></div>
+    <div><b>💬 Direct Support</b><span>WhatsApp पर सीधे request और enquiry भेजें।</span></div>
+    <div><b>🔒 Customer First</b><span>स्पष्ट जानकारी और आसान communication पर focus।</span></div>
+  </div>
+</section>
+
+<section class="feedback-box">
+<h2>⭐ Customer Feedback & Rating</h2>
+<div id="ratingSummary" class="rating-summary">अभी कोई rating नहीं है।</div>
+<p>हमारी service कैसी लगी? अपनी rating और feedback जरूर दें।</p>
+<div class="star-rating">
+<input id="s5" type="radio" name="tsc_rating" value="5"><label for="s5">★</label>
+<input id="s4" type="radio" name="tsc_rating" value="4"><label for="s4">★</label>
+<input id="s3" type="radio" name="tsc_rating" value="3"><label for="s3">★</label>
+<input id="s2" type="radio" name="tsc_rating" value="2"><label for="s2">★</label>
+<input id="s1" type="radio" name="tsc_rating" value="1"><label for="s1">★</label>
+</div>
+<div class="form-grid">
+<input id="feedbackName" placeholder="आपका नाम" required>
+<input id="feedbackPhone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number" required>
+</div>
+<textarea id="feedbackText" placeholder="अपना feedback लिखें..." required></textarea>
+<button type="button" class="primary-btn" onclick="submitTscFeedback()">⭐ Feedback Submit करें</button>
+<div id="feedbackMsg"></div><div id="feedbackList"></div>
+</section><script>
+function gf(){try{return JSON.parse(localStorage.getItem('tsc_feedback_public')||'[]')}catch(e){return[]}}
+function sf(a){localStorage.setItem('tsc_feedback_public',JSON.stringify(a))}
+function escf(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function submitTscFeedback(){
+ const r=document.querySelector('input[name="tsc_rating"]:checked'),n=document.getElementById('feedbackName').value.trim(),p=document.getElementById('feedbackPhone').value.trim(),x=document.getElementById('feedbackText').value.trim();
+ if(!r){alert('कृपया 1 से 5 Star rating चुनें।');return} if(!n){alert('कृपया अपना नाम लिखें।');return} if(!/^[0-9]{10}$/.test(p)){alert('कृपया सही 10-digit phone number डालें।');return} if(!x){alert('कृपया feedback लिखें।');return}
+ const a=gf();a.unshift({name:n,rating:+r.value,text:x});sf(a.slice(0,100));
+ const msg='Customer Feedback & Rating\nName: '+n+'\nPhone: '+p+'\nRating: '+r.value+'/5\nFeedback: '+x;
+ window.open('https://wa.me/918540844244?text='+encodeURIComponent(msg),'_blank');
+ document.getElementById('feedbackName').value='';document.getElementById('feedbackPhone').value='';document.getElementById('feedbackText').value='';document.querySelectorAll('input[name="tsc_rating"]').forEach(x=>x.checked=false);document.getElementById('feedbackMsg').textContent='धन्यवाद! आपका feedback WhatsApp पर भेजने के लिए तैयार है।';rf()
+}
+function rf(){const a=gf(),s=document.getElementById('ratingSummary'),b=document.getElementById('feedbackList');if(!a.length){s.textContent='अभी कोई rating नहीं है।';b.innerHTML='';return}const avg=a.reduce((q,x)=>q+x.rating,0)/a.length;s.textContent='⭐ '+avg.toFixed(1)+'/5 • '+a.length+' Reviews';b.innerHTML=a.map(x=>'<div class="feedback-item"><b>'+escf(x.name)+'</b><br>'+('⭐'.repeat(x.rating))+('☆'.repeat(5-x.rating))+'<br>'+escf(x.text)+'</div>').join('')}
+document.addEventListener('DOMContentLoaded',rf);
+</script>
+<script>
+function openServiceRequest(btn){
+  const card=btn.closest('.service-card');
+  const service=card ? card.getAttribute('data-service') : 'Service';
+  const msg='Service Request\nService: '+service+'\nI want to know more about this service';
+  window.open('https://wa.me/918540844244?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
+</body>
+</html>
