@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+
+<html lang="hi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Tech Solutions Cafe &amp; Internet Cafe | Digital Services</title>
+<meta content="Tech Solutions Cafe &amp; Internet Cafe — online, digital, document, printing and customer support services." name="description"/>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,system-ui,sans-serif;background:#f4f8ff;color:#17233a}
+header{background:linear-gradient(135deg,#ff8a00,#006ee6);color:#fff;text-align:center;padding:18px 14px 28px}
+.logo{width:min(300px,80vw);border-radius:22px;background:#fff;box-shadow:0 12px 35px #001c4770}
+.brand{font-size:clamp(22px,5.5vw,44px);font-weight:900;margin:14px 0 5px;text-shadow:2px 3px 0 #06356b}
+.tag{font-weight:700}.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px}
+.btn{padding:12px 15px;border-radius:999px;text-decoration:none;color:#fff;font-weight:800;box-shadow:0 5px 12px #0003}
+.wa{background:#16a34a}.call{background:#e11d48}.mail{background:#7c3aed}.community{background:#075e54}.channel{background:#075dcc}
+main{max-width:1100px;margin:auto;padding:20px 14px 70px}.notice,.suggest{background:#fff;padding:17px;border-radius:16px;box-shadow:0 7px 22px #173b5d18;margin-bottom:20px}
+.notice{border-left:6px solid #ff8a00}h2{text-align:center;color:#075dcc}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:15px}
+.card{background:#fff;border:2px solid #dbeafe;border-radius:18px;padding:17px;cursor:pointer;box-shadow:0 8px 22px #173b5d14}
+.card h3{color:#075dcc;margin:0 0 8px}.card p{color:#65748a;margin:0}.details{display:none;border-top:1px dashed #bbb;margin-top:12px;padding-top:8px}.open .details{display:block}
+.details li{margin:7px 0}input,textarea{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:10px;margin:7px 0 12px;font:inherit}textarea{min-height:110px}
+button{padding:12px 18px;border:0;border-radius:10px;background:#075dcc;color:#fff;font-weight:800}footer{background:#09264a;color:#fff;text-align:center;padding:25px 15px}
+
+.feedback-box{background:linear-gradient(135deg,#fff,#f4f9ff);padding:24px;border-radius:20px;box-shadow:0 10px 28px rgba(20,65,110,.12);margin:28px 0;border:1px solid #dbeafe}
+.star-rating{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:5px;margin:12px 0}
+.star-rating input{display:none}.star-rating label{font-size:36px;cursor:pointer;color:#cbd5e1}
+.star-rating label:hover,.star-rating label:hover~label,.star-rating input:checked~label{color:#f59e0b}
+.feedback-box textarea{width:100%;min-height:95px;box-sizing:border-box;padding:12px;border:1px solid #cbd5e1;border-radius:12px}
+.feedback-item{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:13px;margin:9px 0}
+.rating-summary{font-size:18px;font-weight:700;margin:8px 0 14px}
+
+/* Professional redesign */
+body{background:linear-gradient(180deg,#eef6ff 0%,#f8fbff 45%,#eef4ff 100%);color:#14233d}
+header{background:linear-gradient(135deg,#0b2a5b 0%,#075dcc 48%,#00a6a6 100%);padding:28px 14px 34px;position:relative;overflow:hidden}
+header:before{content:"";position:absolute;inset:-80px;background:radial-gradient(circle at 15% 20%,#ffffff30,transparent 28%),radial-gradient(circle at 90% 80%,#00e0c040,transparent 30%)}
+header>*{position:relative}
+.logo{width:min(300px,76vw);border-radius:24px;box-shadow:0 18px 45px #00112e70}
+.brand{font-size:clamp(24px,5.5vw,46px);margin-top:16px}
+.tag{font-size:16px;letter-spacing:.3px}
+.actions{margin-top:20px}
+.btn{padding:13px 17px;border-radius:12px;transition:.2s;box-shadow:0 8px 18px #00112e35}
+.btn:hover{transform:translateY(-2px)}
+main{max-width:1180px;padding:28px 16px 70px}
+.notice{background:#fff;border-left:6px solid #00a6a6;box-shadow:0 12px 30px #153c6314}
+h2{color:#0b3d91;margin:8px 0 12px}
+.grid{gap:18px}
+.service-card{background:rgba(255,255,255,.96);border:1px solid #dbe8f7;border-radius:22px;padding:0;overflow:hidden;box-shadow:0 10px 28px #173b5d12;transition:transform .2s,box-shadow .2s;border-top:4px solid #075dcc}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 18px 38px #173b5d20}
+.service-icon{font-size:36px;width:66px;height:66px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:#eaf4ff;margin:18px 18px 0}
+.service-content{padding:0 18px 18px}
+.service-card h3{font-size:20px;color:#0b3d91;margin:14px 0 7px}
+.service-card p{color:#64748b;margin:0 0 12px;line-height:1.5}
+.service-card ul{margin:0 0 16px;padding-left:20px;color:#34445e;line-height:1.55}
+.service-card li{margin:4px 0}
+.service-btn,.primary-btn{width:100%;background:linear-gradient(135deg,#075dcc,#00a6a6);border-radius:12px;padding:13px 16px;cursor:pointer;box-shadow:0 8px 16px #075dcc25}
+.service-btn:hover,.primary-btn:hover{filter:brightness(1.05)}
+.suggest,.feedback-box,.about-box{background:rgba(255,255,255,.97);border:1px solid #dce9f7;border-radius:22px;box-shadow:0 12px 32px #173b5d12;padding:24px;margin:28px 0}
+.section-kicker{font-size:12px;font-weight:900;letter-spacing:2px;color:#00a6a6;margin-bottom:5px}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+label{display:block;font-weight:800;font-size:14px;color:#29415f;margin:5px 0}
+input,textarea{border:1px solid #cddbea;background:#fbfdff}
+input:focus,textarea:focus{outline:3px solid #075dcc20;border-color:#075dcc}
+.about-box p{line-height:1.7;color:#52657f}
+.about-points{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.about-points div{background:#f1f8ff;border:1px solid #d8e9fa;border-radius:16px;padding:15px}
+.about-points b{display:block;color:#075dcc;margin-bottom:6px}
+.about-points span{font-size:14px;color:#5c6e86}
+.star-rating{justify-content:flex-start;background:#f7fbff;border:1px solid #e0ebf7;padding:8px 12px;border-radius:14px}
+.feedback-item{box-shadow:0 4px 14px #173b5d0b}
+footer{background:linear-gradient(135deg,#071c3b,#0b3d91);padding:30px 15px}
+@media(max-width:650px){.form-grid,.about-points{grid-template-columns:1fr}.service-card h3{font-size:19px}.actions .btn{width:calc(50% - 5px);text-align:center}.suggest,.feedback-box,.about-box{padding:19px}}
+
+\n/* Final professional polish */\nhtml{scroll-behavior:smooth}.service-card .service-content ul,.service-card .service-btn{display:none}.hero-pills{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:18px}.hero-pills span{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.28);padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;backdrop-filter:blur(8px)}.logo{display:block;width:min(390px,88vw);height:auto;margin:0 auto;border-radius:24px;background:#fff;box-shadow:0 20px 55px #00112e70}.service-card{position:relative}.service-card:after{content:'VIEW DETAILS →';position:absolute;right:16px;top:17px;font-size:10px;font-weight:900;letter-spacing:.7px;color:#075dcc;background:#edf6ff;border-radius:999px;padding:6px 8px}.service-btn{position:relative;z-index:3}.service-modal{display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;padding:16px}.service-modal.show{display:flex}.service-modal-backdrop{position:absolute;inset:0;background:rgba(3,18,38,.72);backdrop-filter:blur(6px)}.service-modal-dialog{position:relative;z-index:2;width:min(650px,96vw);max-height:88vh;overflow:auto;background:#fff;border-radius:26px;padding:27px;box-shadow:0 30px 90px #0007;animation:modalIn .18s ease}.modal-close{position:absolute;right:14px;top:13px;width:42px;height:42px;padding:0;border-radius:50%;background:#eef5ff;color:#173b5d;font-size:28px;cursor:pointer}.modal-service-icon{width:72px;height:72px;border-radius:20px;background:#eaf4ff;display:flex;align-items:center;justify-content:center;font-size:39px;margin-bottom:14px}.service-modal-dialog h2{text-align:left;margin:0 45px 8px 0}.service-modal-dialog p{color:#5c6e86;line-height:1.65}.service-modal-dialog ul{padding-left:22px;color:#34445e;line-height:1.6}.service-modal-dialog li{margin:6px 0}.modal-open{overflow:hidden}@keyframes modalIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}\n
+/* Reference-inspired service discovery polish */
+.ref-hero{margin:18px 0 24px;padding:28px 22px;border-radius:28px;background:linear-gradient(135deg,#063b8f,#0879d9 55%,#12a4c7);color:#fff;box-shadow:0 18px 45px rgba(6,59,143,.22);text-align:center;position:relative;overflow:hidden}
+.ref-hero:before,.ref-hero:after{content:'';position:absolute;border-radius:50%;background:rgba(255,255,255,.09);pointer-events:none}.ref-hero:before{width:210px;height:210px;right:-80px;top:-90px}.ref-hero:after{width:160px;height:160px;left:-70px;bottom:-80px}
+.ref-hero>*{position:relative;z-index:1}.ref-hero .eyebrow{display:inline-block;padding:6px 11px;border:1px solid rgba(255,255,255,.3);border-radius:999px;font-size:12px;font-weight:900;letter-spacing:.7px;margin-bottom:10px}.ref-hero h1{font-size:clamp(26px,5vw,42px);margin:0 0 9px}.ref-hero p{max-width:760px;margin:0 auto 17px;line-height:1.65;color:#eef8ff}.service-search{max-width:720px;margin:0 auto;background:#fff;border-radius:16px;padding:5px;display:flex;box-shadow:0 12px 30px rgba(0,0,0,.16)}.service-search input{border:0!important;outline:0!important;box-shadow:none!important;margin:0!important;min-width:0;background:#fff!important}.service-search span{display:flex;align-items:center;padding:0 13px;color:#64748b;font-size:20px}.service-filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:16px 0 22px}.filter-btn{border:1px solid #cfe0f5;background:#fff;color:#174b86;border-radius:999px;padding:9px 14px;font-weight:800;cursor:pointer;transition:.18s}.filter-btn:hover,.filter-btn.active{background:#075dcc;color:#fff;border-color:#075dcc;transform:translateY(-1px)}.service-count{text-align:center;color:#64748b;font-size:14px;margin:-10px 0 17px;font-weight:700}.service-card.is-hidden{display:none!important}.quick-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:15px}.quick-actions a{display:inline-flex;align-items:center;gap:7px;padding:10px 15px;border-radius:999px;text-decoration:none;font-weight:900;background:#fff;color:#075dcc;box-shadow:0 8px 20px rgba(0,0,0,.13)}
+@media(max-width:650px){.ref-hero{padding:23px 14px;border-radius:22px}.service-search{width:100%}.filter-btn{font-size:12px;padding:8px 11px}.quick-actions a{width:100%;justify-content:center}}
+.section-heading{text-align:center;margin:22px auto 16px;max-width:900px}.section-heading h2{margin:0 0 7px}.section-heading p{margin:0;color:#64748b;line-height:1.6}.additional-services{margin-top:10px}</style>
+
+<style id="grid-line-fix">
+/* Keep the decorative line out of the CSS grid so it never creates an empty service slot. */
+.additional-services:before{position:absolute;top:-20px;left:4%;margin:0}
+</style>
+
+<style id="premium-dark-gold-theme">
+:root{--bg:#0e0b09;--panel:#15110e;--panel2:#1b140d;--gold:#ffb52e;--gold2:#ffcf66;--cream:#eadfce;--muted:#b8aa98;--line:#3a2a1b;--teal:#00c995;--teal2:#00e0a5}
+html{background:var(--bg)}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:radial-gradient(circle at 50% -10%,#3a2410 0,#160f0b 28%,#0e0b09 60%);color:var(--cream);min-height:100vh}
+header{background:linear-gradient(180deg,#100d0a 0%,#16100c 55%,#0e0b09 100%);border-bottom:1px solid #4b321b;padding:26px 14px 34px;box-shadow:0 20px 55px #000b}
+header:before{background:radial-gradient(circle at 18% 10%,#ffb52e18,transparent 24%),radial-gradient(circle at 85% 25%,#00c99512,transparent 25%)}
+.logo{background:#17120d;border:1px solid #5a3b1d;box-shadow:0 20px 60px #000d}
+.brand{color:var(--gold2);text-shadow:0 2px 22px #ff9d0028;letter-spacing:.4px}
+.tag{color:#d5c8b7}
+.actions .btn{border:1px solid #ffffff1a}
+main{max-width:1220px;background:transparent}
+.notice,.suggest,.feedback-box,.about-box{background:linear-gradient(145deg,#18120e,#100d0a);border:1px solid var(--line);box-shadow:0 18px 45px #0008;color:var(--cream)}
+.notice{border-left:5px solid var(--gold)}
+.notice strong,h2,.about-box h2,.feedback-box h2,.suggest h2{color:var(--gold)}
+h2{font-size:clamp(25px,5vw,38px);letter-spacing:.2px;text-shadow:0 3px 18px #ff9d0020}
+.section-kicker{color:var(--teal2)}
+.grid{gap:20px}
+.service-card{background:linear-gradient(145deg,#1a140f,#100d0a);border:1px solid #3b2a1b;border-top:3px solid #8f5b19;border-radius:20px;box-shadow:0 14px 35px #0009;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.service-card:hover{transform:translateY(-5px);border-color:#a86c20;box-shadow:0 22px 50px #000c,0 0 0 1px #ffb52e12}
+.service-card:after{color:var(--gold);background:#2a1b0e;border:1px solid #60401e}
+.service-icon{background:linear-gradient(145deg,#2b1b0d,#17100b);border:1px solid #5a3b1d;box-shadow:inset 0 1px #ffffff0a,0 8px 22px #0008}
+.service-card h3{color:var(--gold2);font-size:21px}
+.service-card p,.service-card li{color:var(--muted)}
+.service-card .details{border-top-color:#4a351f}
+.service-btn,.primary-btn{background:linear-gradient(135deg,#e99a18,#ffbf3d);color:#1b1106;box-shadow:0 10px 25px #e99a1825;font-weight:900}
+.service-btn:hover,.primary-btn:hover{filter:brightness(1.08);box-shadow:0 12px 28px #e99a1840}
+.form-grid label,label{color:#d8cbb9}
+input,textarea{background:#0f0c09;color:#f4eadc;border:1px solid #49321e}
+input::placeholder,textarea::placeholder{color:#837564}
+input:focus,textarea:focus{outline:3px solid #ffb52e18;border-color:#b77722}
+.about-points div{background:#1a130e;border:1px solid #3c2b1b}
+.about-points b{color:var(--gold)}.about-points span{color:var(--muted)}
+.feedback-box .star-rating{background:#18120e;border-color:#44311e}.star-rating label{color:#5e5144}
+.feedback-item{background:#17110d;border-color:#3a2a1b;color:var(--cream)}
+.rating-summary{color:var(--gold2)}
+footer{background:linear-gradient(180deg,#120e0b,#080706);border-top:1px solid #3b2919;color:#cfc1b0}
+.hero-pills span{background:#1b140f;border-color:#60401e;color:#e6d7c2}
+/* Modal / detail pages */
+.service-modal-backdrop{background:rgba(4,3,2,.84);backdrop-filter:blur(10px)}
+.service-modal-dialog{background:linear-gradient(145deg,#1b140e,#0e0b09)!important;border:1px solid #4d341d!important;box-shadow:0 30px 100px #000e!important;color:var(--cream)!important}
+.service-modal-dialog h2,.service-modal-dialog h3{color:var(--gold2)!important}
+.service-modal-dialog p,.service-modal-dialog li{color:#c7b8a5!important}
+.service-modal-dialog button,.service-modal-dialog .service-btn{background:linear-gradient(135deg,#e99a18,#ffc34e)!important;color:#1b1106!important}
+@media(max-width:650px){header{padding-top:20px}.brand{font-size:27px}.service-card{border-radius:18px}.service-card h3{font-size:19px}main{padding-left:12px;padding-right:12px}.notice,.suggest,.feedback-box,.about-box{padding:18px}}
+</style>
+
+
+<style id="premium-v2-polish">
+/* PREMIUM V2 — visual-only layer. Existing HTML, services, links and JS remain untouched. */
+:root{
+  --gold:#f6b93b;--gold2:#ffd978;--ink:#080706;--ink2:#120e0a;
+  --panel:#17120e;--line:#4a341f;--muted:#b9ab98;--mint:#19d6a0;
+}
+*{scrollbar-width:thin;scrollbar-color:#6e4b22 #0b0907}
+body{
+  background:
+    radial-gradient(900px 500px at 10% -5%,rgba(246,185,59,.11),transparent 55%),
+    radial-gradient(700px 450px at 95% 5%,rgba(25,214,160,.07),transparent 58%),
+    linear-gradient(180deg,#090806,#0f0c09 42%,#080706);
+  color:#efe5d6;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.22;
+  background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:44px 44px;
+}
+header{
+  min-height:460px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(246,185,59,.16),transparent 34%),
+    radial-gradient(circle at 15% 75%,rgba(25,214,160,.07),transparent 28%),
+    linear-gradient(180deg,#0d0a08,#17110b 58%,#0b0907);
+  border-bottom:1px solid #523719;
+  box-shadow:0 25px 80px rgba(0,0,0,.62);
+}
+header:after{
+  content:"";position:absolute;left:8%;right:8%;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,#9a6727,transparent);
+}
+.logo{
+  width:min(410px,88vw);border-radius:28px;border:1px solid #6b481f;
+  box-shadow:0 0 0 8px rgba(255,255,255,.018),0 28px 75px rgba(0,0,0,.75);
+}
+.brand{
+  font-size:clamp(28px,6vw,52px);font-weight:950;letter-spacing:.7px;
+  background:linear-gradient(90deg,#f4b83f,#ffe39a,#f0a925);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:none;
+}
+.tag{color:#d9cbbb;font-weight:650}
+.actions{gap:12px}
+.btn{
+  border:1px solid rgba(255,255,255,.10)!important;
+  background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.045));
+  backdrop-filter:blur(10px);transition:.22s ease;
+}
+.btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 30px rgba(0,0,0,.4)}
+.wa{background:linear-gradient(135deg,#0d8f55,#18c878)!important}
+.call{background:linear-gradient(135deg,#b92b4c,#e94f71)!important}
+.mail{background:linear-gradient(135deg,#6031a8,#8a52df)!important}
+.community,.channel{background:linear-gradient(135deg,#07564e,#0a806f)!important}
+.hero-pills span{
+  background:rgba(255,255,255,.045);border-color:#60451f;color:#e8d9c4;
+  box-shadow:inset 0 1px rgba(255,255,255,.06);
+}
+main{max-width:1240px;padding-top:34px}
+.notice{
+  border-radius:18px!important;background:linear-gradient(135deg,#17110c,#0e0b08)!important;
+  border-color:#49331e!important;box-shadow:0 15px 45px rgba(0,0,0,.42)!important;
+}
+.ref-hero{
+  margin-top:26px!important;border:1px solid #5b3d1d;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(246,185,59,.17),transparent 30%),
+    linear-gradient(135deg,#1b1209,#0d0a08 68%);
+  box-shadow:0 25px 65px rgba(0,0,0,.55)!important;
+}
+.ref-hero h1{
+  background:linear-gradient(90deg,#fff3d2,#ffd36c,#f2ae2e);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.ref-hero p{color:#cdbda8!important}
+.service-search{
+  border:1px solid #65471f;box-shadow:0 15px 35px rgba(0,0,0,.38)!important;
+}
+.service-search input{color:#21180e!important}
+.quick-actions a{
+  background:linear-gradient(180deg,#fffaf0,#eadcc6)!important;color:#3a260e!important;
+}
+h2{color:#ffd36c!important}
+.section-heading p,.service-count{color:#a99a88!important}
+.service-filters{gap:10px}
+.filter-btn{
+  background:#15100c!important;color:#d7c7b3!important;border-color:#4a341f!important;
+  box-shadow:0 5px 16px rgba(0,0,0,.2);
+}
+.filter-btn:hover,.filter-btn.active{
+  background:linear-gradient(135deg,#d99520,#ffd05b)!important;color:#1a1006!important;
+  border-color:#f0ad32!important;box-shadow:0 8px 22px rgba(217,149,32,.22);
+}
+.service-card{
+  min-height:100%;background:
+    radial-gradient(circle at 100% 0%,rgba(246,185,59,.065),transparent 34%),
+    linear-gradient(145deg,#1a130d,#0d0a08)!important;
+  border:1px solid #3f2c1b!important;border-top:3px solid #a66b20!important;
+  box-shadow:0 16px 42px rgba(0,0,0,.52)!important;
+}
+.service-card:hover{
+  border-color:#8f6226!important;transform:translateY(-7px);
+  box-shadow:0 24px 55px rgba(0,0,0,.62),0 0 30px rgba(246,185,59,.055)!important;
+}
+.service-icon{
+  background:linear-gradient(145deg,#30200e,#15100b)!important;
+  border:1px solid #5a3d1e!important;box-shadow:0 12px 26px rgba(0,0,0,.4)!important;
+}
+.service-card h3{color:#ffd778!important}
+.service-card p,.service-card li{color:#b8aa99!important}
+.service-card:after{background:#21150b!important;color:#ffd16a!important;border-color:#65451f!important}
+.suggest,.feedback-box,.about-box{
+  background:
+    radial-gradient(circle at 100% 0%,rgba(246,185,59,.055),transparent 35%),
+    linear-gradient(145deg,#18120d,#0e0b08)!important;
+  border-color:#49341f!important;box-shadow:0 18px 48px rgba(0,0,0,.5)!important;
+}
+.about-points div{transition:.2s}
+.about-points div:hover{transform:translateY(-3px);border-color:#745022}
+input,textarea{
+  border-radius:13px!important;background:#0b0907!important;border-color:#4b351f!important;
+}
+input:focus,textarea:focus{border-color:#bd7c25!important;box-shadow:0 0 0 4px rgba(246,185,59,.07)!important}
+.primary-btn,.service-btn{
+  background:linear-gradient(135deg,#d9931b,#ffd15a)!important;color:#1b1005!important;
+}
+.primary-btn:hover,.service-btn:hover{transform:translateY(-1px);filter:none!important}
+.service-modal-dialog{
+  background:
+    radial-gradient(circle at 100% 0%,rgba(246,185,59,.09),transparent 35%),
+    linear-gradient(145deg,#1b140e,#0b0907)!important;
+  border-color:#62441f!important;
+}
+.modal-close{background:#25190d!important;color:#f1d69a!important;border:1px solid #54391d}
+footer{
+  position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#100c09,#050403)!important;
+  border-top:1px solid #4a321b!important;
+}
+footer:before{
+  content:"";position:absolute;left:20%;right:20%;top:0;height:1px;
+  background:linear-gradient(90deg,transparent,#d79a32,transparent);
+}
+@media(max-width:650px){
+  header{min-height:400px}
+  .logo{width:min(350px,90vw)}
+  .brand{letter-spacing:.2px}
+  .ref-hero{box-shadow:0 18px 40px rgba(0,0,0,.5)!important}
+  .service-card:hover{transform:translateY(-3px)}
+}
+</style>
+
+
+<style id="colourful-premium-theme">
+:root{
+  --cp-bg:#080b24;
+  --cp-bg2:#10143b;
+  --cp-panel:#171b49;
+  --cp-panel2:#20245a;
+  --cp-purple:#8b5cf6;
+  --cp-blue:#3b82f6;
+  --cp-cyan:#22d3ee;
+  --cp-gold:#fbbf24;
+  --cp-pink:#ec4899;
+  --cp-text:#f8fafc;
+  --cp-muted:#cbd5e1;
+}
+html{background:var(--cp-bg)!important}
+body{
+  color:var(--cp-text)!important;
+  background:
+    radial-gradient(900px 500px at 8% -5%,rgba(139,92,246,.28),transparent 55%),
+    radial-gradient(800px 500px at 95% 8%,rgba(34,211,238,.18),transparent 55%),
+    radial-gradient(700px 450px at 55% 100%,rgba(236,72,153,.12),transparent 60%),
+    linear-gradient(180deg,#070a20 0%,#0b1030 48%,#080b24 100%)!important;
+}
+body:before{
+  opacity:.18!important;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px)!important;
+  background-size:44px 44px!important;
+}
+header{
+  background:
+    radial-gradient(circle at 50% 5%,rgba(139,92,246,.32),transparent 30%),
+    radial-gradient(circle at 12% 75%,rgba(34,211,238,.14),transparent 30%),
+    linear-gradient(180deg,#0b0f30,#151a49 62%,#0b0f2b)!important;
+  border-bottom:1px solid rgba(139,92,246,.45)!important;
+  box-shadow:0 24px 80px rgba(0,0,0,.65)!important;
+}
+header:after{
+  background:linear-gradient(90deg,transparent,#22d3ee,#8b5cf6,#fbbf24,transparent)!important;
+}
+.logo{
+  border:1px solid rgba(251,191,36,.55)!important;
+  box-shadow:0 0 0 8px rgba(139,92,246,.08),0 25px 75px rgba(0,0,0,.72),0 0 35px rgba(34,211,238,.12)!important;
+}
+.brand{
+  background:linear-gradient(90deg,#fbbf24,#f9fafb,#67e8f9,#a78bfa)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+  text-shadow:none!important;
+}
+.tag{color:#cbd5e1!important}
+main{background:transparent!important}
+.notice,.suggest,.feedback-box,.about-box{
+  background:linear-gradient(145deg,rgba(28,34,82,.96),rgba(17,22,59,.96))!important;
+  border:1px solid rgba(139,92,246,.35)!important;
+  box-shadow:0 18px 50px rgba(0,0,0,.38),0 0 30px rgba(59,130,246,.08)!important;
+  color:var(--cp-text)!important;
+}
+.notice{border-left:5px solid var(--cp-cyan)!important}
+.notice strong,h2,.about-box h2,.feedback-box h2{color:#fbbf24!important}
+.section-heading h2,.section-heading p{color:var(--cp-text)!important}
+.section-heading p{color:#cbd5e1!important}
+.service-card{
+  background:
+    linear-gradient(145deg,rgba(35,41,99,.98),rgba(20,25,67,.98))!important;
+  border:1px solid rgba(99,102,241,.38)!important;
+  box-shadow:0 14px 35px rgba(0,0,0,.32),0 0 24px rgba(59,130,246,.07)!important;
+  color:var(--cp-text)!important;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease!important;
+}
+.service-card:hover{
+  transform:translateY(-5px)!important;
+  border-color:rgba(34,211,238,.7)!important;
+  box-shadow:0 20px 45px rgba(0,0,0,.4),0 0 30px rgba(34,211,238,.14)!important;
+}
+.service-card h3{color:#f8fafc!important}
+.service-card p,.service-content li{color:#cbd5e1!important}
+.service-icon{
+  background:linear-gradient(135deg,rgba(139,92,246,.24),rgba(34,211,238,.18))!important;
+  border:1px solid rgba(34,211,238,.3)!important;
+}
+.filter-btn{
+  background:rgba(23,27,73,.88)!important;
+  color:#cbd5e1!important;
+  border:1px solid rgba(99,102,241,.38)!important;
+}
+.filter-btn:hover,.filter-btn.active{
+  background:linear-gradient(135deg,#7c3aed,#2563eb)!important;
+  color:#fff!important;
+  border-color:#22d3ee!important;
+  box-shadow:0 8px 24px rgba(59,130,246,.25)!important;
+}
+.service-search{
+  background:#11163d!important;
+  color:#f8fafc!important;
+  border:1px solid rgba(139,92,246,.45)!important;
+}
+.service-search:focus{border-color:#22d3ee!important;box-shadow:0 0 0 3px rgba(34,211,238,.12)!important}
+.service-count{color:#a5b4fc!important}
+.service-btn,.primary-btn,.actions .btn{
+  background:linear-gradient(135deg,#8b5cf6,#3b82f6 55%,#22d3ee)!important;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.14)!important;
+  box-shadow:0 10px 28px rgba(59,130,246,.24)!important;
+}
+.service-btn:hover,.primary-btn:hover,.actions .btn:hover{
+  background:linear-gradient(135deg,#a855f7,#2563eb,#06b6d4)!important;
+  box-shadow:0 14px 35px rgba(34,211,238,.25)!important;
+  transform:translateY(-1px)!important;
+}
+input,textarea{
+  background:#0f1437!important;color:#f8fafc!important;
+  border:1px solid rgba(99,102,241,.4)!important;
+}
+input:focus,textarea:focus{
+  border-color:#22d3ee!important;
+  outline:3px solid rgba(34,211,238,.12)!important;
+}
+.about-points div{
+  background:rgba(20,25,67,.9)!important;
+  border:1px solid rgba(139,92,246,.28)!important;
+}
+.about-points b{color:#fbbf24!important}
+.about-points span{color:#cbd5e1!important}
+.feedback-box .star-rating{
+  background:#11163d!important;border-color:rgba(139,92,246,.35)!important
+}
+.feedback-item{
+  background:#151a46!important;border-color:rgba(99,102,241,.3)!important;color:#f8fafc!important
+}
+.rating-summary{color:#fbbf24!important}
+.hero-pills span{
+  background:rgba(23,27,73,.82)!important;
+  border-color:rgba(34,211,238,.3)!important;
+  color:#e0f2fe!important;
+}
+.quick-actions a{
+  background:linear-gradient(135deg,#fbbf24,#f59e0b)!important;
+  color:#111827!important;
+}
+.service-modal-backdrop{
+  background:rgba(4,7,25,.84)!important;
+  backdrop-filter:blur(12px)!important;
+}
+.service-modal-dialog{
+  background:linear-gradient(145deg,#20245a,#10143b)!important;
+  border:1px solid rgba(139,92,246,.55)!important;
+  box-shadow:0 30px 100px rgba(0,0,0,.72),0 0 45px rgba(59,130,246,.14)!important;
+  color:#f8fafc!important;
+}
+.service-modal-dialog h2,.service-modal-dialog h3{color:#fbbf24!important}
+.service-modal-dialog p,.service-modal-dialog li{color:#cbd5e1!important}
+.service-modal-dialog button,.service-modal-dialog .service-btn{
+  background:linear-gradient(135deg,#8b5cf6,#3b82f6,#22d3ee)!important;
+  color:#fff!important;
+}
+footer{
+  background:linear-gradient(180deg,#0d1133,#070a20)!important;
+  border-top:1px solid rgba(139,92,246,.4)!important;
+  color:#cbd5e1!important;
+}
+footer b{color:#fbbf24!important}
+@media(max-width:650px){
+  header{padding-top:20px!important}
+  .brand{font-size:27px!important}
+  .service-card{border-radius:18px!important}
+  main{padding-left:12px!important;padding-right:12px!important}
+}
+</style>
+
+
+<style id="final-premium-button-line">
+/* Premium direct/action buttons */
+.quick-actions a,
+.direct-btn,
+.actions .btn{
+  background:linear-gradient(135deg,#f59e0b 0%,#fbbf24 45%,#22d3ee 100%)!important;
+  color:#07111f!important;
+  border:1px solid rgba(255,255,255,.30)!important;
+  box-shadow:0 8px 24px rgba(251,191,36,.20),0 0 18px rgba(34,211,238,.10)!important;
+  font-weight:900!important;
+}
+.quick-actions a:hover,
+.direct-btn:hover,
+.actions .btn:hover{
+  background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 45%,#06b6d4 100%)!important;
+  color:#06101c!important;
+  box-shadow:0 12px 30px rgba(251,191,36,.28),0 0 24px rgba(34,211,238,.16)!important;
+  transform:translateY(-2px)!important;
+}
+
+/* Thin premium line above Services section */
+.service-section,
+.services-section,
+#services,
+.additional-services{
+  position:relative;
+}
+.service-section:before,
+.services-section:before,
+#services:before,
+.additional-services:before{
+  content:"";
+  display:block;
+  width:92%;
+  max-width:1100px;
+  height:2px;
+  margin:0 auto 18px;
+  background:linear-gradient(90deg,transparent,#22d3ee 22%,#8b5cf6 50%,#fbbf24 78%,transparent);
+  opacity:.65;
+  border-radius:999px;
+  box-shadow:0 0 10px rgba(139,92,246,.16);
+}
+</style>
+
+
+
+
+
+
+
+
+<style id="visible-moving-light-beam">
+.moving-light-beam{
+  position:fixed;
+  top:-55%;
+  left:-85%;
+  width:78%;
+  height:210%;
+  z-index:9998;
+  pointer-events:none;
+  transform:rotate(24deg) translate3d(0,0,0);
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255,255,255,0) 14%,
+      rgba(255,255,255,.045) 28%,
+      rgba(255,255,255,.14) 39%,
+      rgba(255,255,255,.25) 47%,
+      rgba(251,191,36,.18) 51%,
+      rgba(125,211,252,.14) 55%,
+      rgba(255,255,255,.08) 62%,
+      rgba(255,255,255,.025) 72%,
+      transparent 88%
+    );
+  filter:blur(12px);
+  opacity:1;
+  mix-blend-mode:screen;
+  animation:visibleLightSweep 7s cubic-bezier(.42,0,.58,1) infinite;
+}
+@keyframes visibleLightSweep{
+  0%{left:-88%;opacity:0}
+  8%{opacity:.8}
+  35%{opacity:1}
+  50%{opacity:1}
+  65%{opacity:.9}
+  90%{opacity:.45}
+  100%{left:130%;opacity:0}
+}
+@media(max-width:650px){
+  .moving-light-beam{
+    width:92%;
+    filter:blur(10px);
+    animation-duration:6.5s;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .moving-light-beam{animation:none!important;opacity:0!important}
+}
+</style>
+
+
+
+
+
+<style id="professional-footer-info">
+.site-footer-professional{
+  margin-top:0!important;
+  padding:28px 16px 34px!important;
+  text-align:center!important;
+  background:transparent!important;
+}
+.footer-contact-professional{
+  margin-bottom:20px;
+}
+.footer-brand-line{
+  color:#fbbf24!important;
+  font-weight:800!important;
+  font-size:16px!important;
+  letter-spacing:.2px;
+  margin-bottom:7px;
+}
+.footer-contact-line{
+  color:#cbd5e1!important;
+  font-size:14px!important;
+}
+.footer-contact-line span{
+  color:#64748b!important;
+  margin:0 5px;
+}
+.footer-policy-links{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:0;
+  margin:0 auto;
+}
+.footer-policy-links button{
+  appearance:none;
+  border:0!important;
+  background:transparent!important;
+  color:#fbbf24!important;
+  padding:4px 13px!important;
+  font:inherit!important;
+  font-size:15px!important;
+  cursor:pointer!important;
+  transition:color .2s ease, text-shadow .2s ease!important;
+}
+.footer-policy-links button:hover{
+  color:#67e8f9!important;
+  text-shadow:0 0 14px rgba(34,211,238,.35);
+}
+.footer-separator{
+  color:#94a3b8!important;
+  font-size:15px;
+}
+.footer-copy-professional{
+  margin-top:20px!important;
+  color:#94a3b8!important;
+  font-size:12px!important;
+}
+
+.info-modal{
+  position:fixed;
+  inset:0;
+  z-index:10050;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+.info-modal.is-open{
+  display:flex;
+}
+.info-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(3,6,22,.82);
+  backdrop-filter:blur(9px);
+}
+.info-modal-dialog{
+  position:relative;
+  z-index:1;
+  width:min(680px,100%);
+  max-height:min(82vh,720px);
+  overflow:auto;
+  border:1px solid rgba(139,92,246,.48);
+  border-radius:20px;
+  background:
+    radial-gradient(circle at 15% 0%,rgba(139,92,246,.18),transparent 35%),
+    radial-gradient(circle at 90% 10%,rgba(34,211,238,.10),transparent 30%),
+    linear-gradient(145deg,#1c2154,#0e1235);
+  box-shadow:0 30px 90px rgba(0,0,0,.7),0 0 45px rgba(59,130,246,.12);
+  padding:30px 28px 26px;
+  animation:infoModalIn .22s ease-out;
+}
+@keyframes infoModalIn{
+  from{opacity:0;transform:translateY(12px) scale(.98)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.info-modal-accent{
+  width:64px;
+  height:3px;
+  border-radius:99px;
+  margin-bottom:16px;
+  background:linear-gradient(90deg,#fbbf24,#8b5cf6,#22d3ee);
+}
+.info-modal-dialog h2{
+  margin:0 40px 16px 0!important;
+  color:#fbbf24!important;
+  font-size:24px!important;
+}
+.info-modal-content{
+  color:#dbe4f0;
+  font-size:14px;
+  line-height:1.75;
+}
+.info-modal-content p{margin:0 0 13px}
+.info-modal-content strong{color:#fbbf24}
+.info-modal-close{
+  position:absolute;
+  right:14px;
+  top:12px;
+  width:38px;
+  height:38px;
+  border:1px solid rgba(148,163,184,.25)!important;
+  border-radius:50%;
+  background:rgba(15,23,42,.75)!important;
+  color:#e2e8f0!important;
+  font-size:25px!important;
+  line-height:1!important;
+  cursor:pointer!important;
+}
+.info-modal-close:hover{
+  color:#fff!important;
+  border-color:#22d3ee!important;
+  box-shadow:0 0 16px rgba(34,211,238,.15);
+}
+@media(max-width:650px){
+  .footer-policy-links button{
+    padding:4px 8px!important;
+    font-size:14px!important;
+  }
+  .footer-separator{font-size:14px}
+  .info-modal{padding:12px}
+  .info-modal-dialog{
+    max-height:88vh;
+    border-radius:17px;
+    padding:25px 20px 21px;
+  }
+  .info-modal-dialog h2{font-size:21px!important}
+}
+</style>
+
+<style id="footer-extra-colourful">
+.footer-features{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 auto 14px;max-width:760px}
+.footer-features span{display:inline-flex;align-items:center;padding:8px 13px;border-radius:999px;background:linear-gradient(135deg,rgba(139,92,246,.22),rgba(34,211,238,.16));border:1px solid rgba(34,211,238,.35);color:#f8fafc;font-size:13px;font-weight:900;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.footer-value-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:850px;margin:0 auto 20px}
+.footer-value-points>div{padding:12px 10px;border-radius:15px;background:linear-gradient(145deg,rgba(35,41,99,.72),rgba(20,25,67,.72));border:1px solid rgba(139,92,246,.28)}
+.footer-value-points strong{color:#fbbf24;font-size:14px}
+.footer-value-points p{margin:5px 0 0;color:#cbd5e1;font-size:12px;line-height:1.45}
+@media(max-width:650px){.footer-value-points{grid-template-columns:1fr}.footer-features span{font-size:12px;padding:7px 10px}}
+</style>
+
+<style id="service-top-colour-logo-size-only">
+/* Only requested changes: reference-matched service top colours + slightly smaller logo */
+.service-card{
+  position:relative!important;
+  overflow:hidden!important;
+}
+.service-card:before{
+  content:""!important;
+  position:absolute!important;
+  top:0!important;
+  left:0!important;
+  right:0!important;
+  height:4px!important;
+  background:linear-gradient(90deg,#22d3ee 0%,#22d3ee 18%,#8b5cf6 55%,#8b5cf6 100%)!important;
+  border-radius:22px 22px 0 0!important;
+  z-index:2!important;
+  pointer-events:none!important;
+}
+.logo{
+  width:min(330px,75vw)!important;
+}
+@media(max-width:650px){
+  .logo{width:min(300px,78vw)!important}
+}
+</style>
+
+<style id="feedback-star-box-only">
+/* Only requested feedback visual adjustment: remove the star-rating box and tighten spacing above name/feedback. */
+.star-rating{background:transparent!important;border:0!important;padding:0!important;margin:4px 0 4px!important;border-radius:0!important;}
+</style>
+</head>
+
+<div class="moving-light-beam" aria-hidden="true"></div>
+<body>
+<header>
+<img alt="Tech Solution Cafe logo" class="logo" src="logo_new.png"/>
+
+<div class="brand">𝕿𝖊𝖈𝖍 𝖘𝖔𝖑𝖚𝖙𝖎𝖔𝖓𝖘 𝖈𝖆𝖋𝖊 &amp; 𝕴𝖓𝖙𝖊𝖗𝖓𝖊𝖙 𝖈𝖆𝖋𝖊</div>
+<div class="tag">Your Work • Our Priority</div>
+<div class="actions">
+<a class="btn wa" href="https://wa.me/918540844244?text=Hello%20Tech%20Solution%20Cafe" target="_blank">💬 WhatsApp</a>
+<a class="btn call" href="tel:+918540844244">📞 Call</a>
+<a class="btn mail" href="mailto:akmth3532@gmail.com">✉️ Gmail</a>
+<a class="btn community" href="https://chat.whatsapp.com/E2yGvlXfeNu1M0VX9MhGrB" target="_blank">👥 WhatsApp Community</a>
+<a class="btn channel" href="https://whatsapp.com/channel/0029Vb7jqlz90x2mGivL4U1V" target="_blank">📢 WhatsApp Channel</a>
+</div>
+<div class="hero-pills"><span>⚡ Fast Support</span><span>💬 WhatsApp Request</span><span>🔒 Simple &amp; Customer Friendly</span></div>
+</header>
+<main>
+<div class="notice"><b>📌 सभी Online Services:</b> किसी भी service पर click/tap करके उसकी पूरी details देखें। सरकारी सेवा की उपलब्धता और समय संबंधित विभाग/portal पर निर्भर हो सकता है।</div>
+<section class="ref-hero">
+<div class="eyebrow">DIGITAL SEVA • ONLINE ASSISTANCE</div>
+<h1>Online &amp; Digital Seva Portal</h1>
+<p>जमीन, certificates, ID cards, government schemes और रोज़मर्रा की digital services — एक ही जगह। अपनी service खोजें और details देखकर सीधे WhatsApp पर request भेजें।</p>
+<div class="service-search"><span>🔎</span><input autocomplete="off" id="serviceSearch" placeholder="Service search करें — जैसे PAN, Zameen, Aadhaar..." type="search"/></div>
+<div class="quick-actions"><a href="https://wa.me/918540844244?text=Hello%20Tech%20Solution%20Cafe" rel="noopener" target="_blank">💬 WhatsApp Helpdesk</a><a href="tel:+918540844244">📞 Call Now</a></div>
+</section>
+<h2>हमारी Online &amp; Digital Services</h2>
+<div aria-label="Service categories" class="service-filters">
+<button class="filter-btn active" data-filter="all" type="button">All Services</button>
+<button class="filter-btn" data-filter="id" type="button">ID &amp; Cards</button>
+<button class="filter-btn" data-filter="certificate" type="button">Certificates</button>
+<button class="filter-btn" data-filter="land" type="button">Zameen / Bhumi</button>
+<button class="filter-btn" data-filter="govt" type="button">Government</button>
+<button class="filter-btn" data-filter="education" type="button">Education</button>
+<button class="filter-btn" data-filter="digital" type="button">Digital / Printing</button>
+<button class="filter-btn" data-filter="banking" type="button">Banking / Tax</button>
+<button class="filter-btn" data-filter="transport" type="button">Transport</button>
+<button class="filter-btn" data-filter="travel" type="button">Travel / Booking</button>
+<button class="filter-btn" data-filter="health" type="button">Health</button>
+<button class="filter-btn" data-filter="agriculture" type="button">Agriculture</button>
+<button class="filter-btn" data-filter="property" type="button">Property / Local</button>
+<button class="filter-btn" data-filter="legal" type="button">Court / Legal</button>
+<button class="filter-btn" data-filter="business" type="button">Business</button>
+<button class="filter-btn" data-filter="postal" type="button">Postal</button>
+</div>
+<div class="service-count" id="serviceCount">13 services available</div>
+<div class="grid">
+<article class="service-card" data-category="id" data-service="PAN Card Services" onclick="openServiceModal(this)">
+<div class="service-icon">🪪</div>
+<div class="service-content">
+<h3>PAN Card Services</h3>
+<p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+<ul><li>New PAN Card Apply</li><li>PAN Card Correction — Name, DOB, Father Name, Address, Mobile, Email</li><li>PAN Apply Without Document</li><li>PAN Full Name &amp; Full Father Name Correction (Aadhaar Based)</li><li>PAN Card Original PDF Download</li><li>Re-Print PVC Card by Post Delivery</li></ul>
+<button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button>
+</div>
+</article>
+<article class="service-card" data-category="id" data-service="Voter Card Service" onclick="openServiceModal(this)">
+<div class="service-icon">🗳️</div>
+<div class="service-content">
+<h3>Voter Card Service</h3>
+<p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+<ul><li>New Voter Card Apply</li><li>Voter Card Correction</li><li>Voter ID Mobile Number Link</li></ul>
+<button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button>
+</div>
+</article>
+<article class="service-card" data-category="id" data-service="e-SHRAM Card Service" onclick="openServiceModal(this)">
+<div class="service-icon">💼</div>
+<div class="service-content">
+<h3>e-SHRAM Card Service</h3>
+<p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+<ul><li>New e-SHRAM Card Apply</li><li>Aadhaar Number → e-Shram Card PDF</li><li>Aadhaar Number → e-Shram Mobile Number Link</li></ul>
+<button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button>
+</div>
+</article>
+<article class="service-card" data-category="education" data-service="Exam &amp; Certificate Services" onclick="openServiceModal(this)">
+<div class="service-icon">📚</div>
+<div class="service-content">
+<h3>Exam &amp; Certificate Services</h3>
+<p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+<ul><li>CSC TEC Exam Pass</li><li>Learning Licence Exam Pass</li><li>Aadhaar e-Learning LMS Certificate</li><li>Aadhaar NSEIT RO Pending Approval</li></ul>
+<button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button>
+</div>
+</article>
+<article class="service-card" data-category="id" data-service="Aadhaar Services" onclick="openServiceModal(this)">
+<div class="service-icon">🪪</div>
+<div class="service-content">
+<h3>Aadhaar Services</h3>
+<p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+<ul><li>Aadhaar Correction — Father/Husband Name &amp; Address</li><li>Aadhaar-related online services</li><li>PVC Aadhaar Card Print</li></ul>
+<button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button>
+</div>
+</article>
+
+<article class="service-card" data-category="Certificates &amp; RTPS" data-service="Certificates" onclick="openServiceModal(this)">
+<div class="service-icon">📜</div>
+<div class="service-content">
+<h3>📜 Certificates &amp; RTPS Services</h3>
+<p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+<ul><li>जन्म प्रमाण पत्र (Birth Certificate)</li><li>मृत्यु प्रमाण पत्र (Death Certificate)</li><li>NCL (Non-Creamy Layer) Certificate</li><li>जाति प्रमाण पत्र</li><li>आवासीय प्रमाण पत्र</li><li>आय प्रमाण पत्र</li><li>आचरण प्रमाण पत्र</li><li>EWS Certificate</li><li>Income &amp; Asset Certificate (EWS)</li><li>BC/EBC NCL Certificate</li><li>OBC NCL Certificate</li><li>Central NCL Certificate</li><li>Residence / Domicile Certificate</li><li>Caste Certificate</li><li>Income Certificate</li><li>Character Certificate</li><li>Marriage Certificate Assistance</li><li>Police Verification Certificate</li><li>RTPS Application Status / Certificate Download</li></ul>
+<button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button>
+</div>
+</article>
+<article class="service-card" data-category="land" data-service="Land &amp; Revenue Services" onclick="openServiceModal(this)">
+<div class="service-icon">🌾</div>
+<div class="service-content">
+<h3>Land &amp; Revenue Services</h3>
+<p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+<ul><li>जमीन का रसीद</li><li>खतियान निकलवाएं</li><li>दाखिल-खारिज</li></ul>
+<button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button>
+</div>
+</article>
+<article class="service-card" data-category="govt" data-service="Government &amp; Welfare Services" onclick="openServiceModal(this)">
+<div class="service-icon">💳</div>
+<div class="service-content">
+<h3>Government &amp; Welfare Services</h3>
+<p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+<ul><li>वृद्धा पेंशन योजना Online Apply</li><li>सभी पेंशन का KYC</li><li>PM किसान e-KYC</li><li>New Ayushman Card Apply</li><li>आयुष्मान कार्ड Print</li></ul>
+<button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button>
+</div>
+</article>
+<article class="service-card" data-category="digital" data-service="Printing &amp; Digital Services" onclick="openServiceModal(this)">
+<div class="service-icon">🖨️</div>
+<div class="service-content">
+<h3>Printing &amp; Digital Services</h3>
+<p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+<ul><li>फोटो कॉपी — रंगीन एवं सादा</li><li>लेमिनेशन</li><li>प्रिंट आउट — रंगीन एवं सादा</li><li>Passport Size Photo</li><li>Resume बनाना</li><li>Bio Data बनाना</li><li>Aadhaar Udyog Registration</li></ul>
+<button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button>
+</div>
+</article>
+<article class="service-card" data-category="education" data-service="Education Services" onclick="openServiceModal(this)">
+<div class="service-icon">🎓</div>
+<div class="service-content">
+<h3>Education Services</h3>
+<p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+<ul><li>Student APAAR Card</li><li>Scholarship Online Apply</li><li>Online Admission &amp; Exam Forms</li></ul>
+<button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button>
+</div>
+</article>
+<article class="service-card" data-category="Jobs &amp; PF" data-service="Employment &amp; PF Services" onclick="openServiceModal(this)">
+<div class="service-icon">👨‍💼</div>
+<div class="service-content">
+<h3>👨‍💼 Employment, Jobs &amp; PF Services</h3>
+<p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+<ul><li>PF काम</li><li>Online Job / Recruitment Forms</li><li>Government Scheme Forms</li><li>Government Job Form Filling</li><li>Private Job Application</li><li>Job Portal Registration</li><li>Admit Card Download</li><li>Result Download</li><li>College / University Online Forms</li><li>Entrance Exam Forms</li><li>Migration Certificate Assistance</li><li>Scholarship / Education Document Assistance</li></ul>
+<button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button>
+</div>
+</article>
+<article class="service-card" data-category="digital" data-service="Other Online Services" onclick="openServiceModal(this)">
+<div class="service-icon">📱</div>
+<div class="service-content">
+<h3>Other Online Services</h3>
+<p>Service details देखें और सीधे WhatsApp पर request भेजें।</p>
+<ul><li>Mobile Recharge</li><li>Bill Payment</li><li>Railway Ticket</li><li>Online Form Filling</li><li>Photo / Document Scan</li><li>Email / Online Application Assistance</li></ul>
+<button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button>
+</div>
+</article>
+</div>
+<div class="section-heading" style="margin-top:34px"><h2>➕ More Online &amp; Digital Services</h2><p>नई services भी category-wise उपलब्ध हैं। किसी भी card पर click करके पूरी details और WhatsApp request देखें।</p></div>
+<div class="grid additional-services">
+
+<article class="service-card" data-category="id" data-service="Document &amp; ID Assistance" onclick="openServiceModal(this)"><div class="service-icon">🪪</div><div class="service-content"><h3>Document &amp; ID Assistance</h3><p>Service details देखें और सीधे WhatsApp पर request भेजें।</p><ul><li>DigiLocker Account &amp; Document Assistance</li><li>DigiLocker Document Download / Print</li><li>Document Verification Assistance</li><li>Government ID Document Download Assistance</li></ul><button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button></div></article>
+<article class="service-card" data-category="Banking &amp; Tax" data-service="Banking, Tax &amp; PF Services" onclick="openServiceModal(this)"><div class="service-icon">🏦</div><div class="service-content"><h3>🏦 Banking &amp; Tax Services</h3><p>Service details देखें और सीधे WhatsApp पर request भेजें।</p><ul><li>ITR / Income Tax Return Filing Assistance</li><li>PAN–Aadhaar Linking Assistance</li><li>Form 16 / Tax Document Assistance</li><li>Bank Statement / PDF Assistance</li></ul><button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button></div></article>
+<article class="service-card" data-category="Transport" data-service="Vehicle &amp; Transport Services" onclick="openServiceModal(this)"><div class="service-icon">🚘</div><div class="service-content"><h3>🚘 Driving Licence, Vehicle &amp; Transport Services</h3><p>Service details देखें और सीधे WhatsApp पर request भेजें।</p><ul><li>New Driving Licence Apply</li><li>Learning Licence services</li><li>Driving Licence Correction / Renewal</li><li>Vehicle RC Related Services</li><li>RC Download Assistance</li><li>Driving Licence Renewal</li><li>Learning Licence Assistance</li><li>Vehicle Insurance Online Assistance</li><li>Challan Status / Payment Assistance</li><li>FASTag Related Assistance</li></ul><button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button></div></article>
+<article class="service-card" data-category="travel" data-service="Travel &amp; Booking Services" onclick="openServiceModal(this)"><div class="service-icon">✈️</div><div class="service-content"><h3>Travel &amp; Booking Services</h3><p>Service details देखें और सीधे WhatsApp पर request भेजें।</p><ul><li>Passport Apply</li><li>Flight Ticket Booking Assistance</li><li>Bus Ticket Booking</li><li>Hotel Booking Assistance</li><li>Train PNR Status</li><li>Train Ticket Cancellation Assistance</li><li>Passport Appointment Assistance</li><li>Visa Form Assistance</li></ul><button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button></div></article>
+<article class="service-card" data-category="health" data-service="Health Services" onclick="openServiceModal(this)"><div class="service-icon">🏥</div><div class="service-content"><h3>Health Services</h3><p>Service details देखें और सीधे WhatsApp पर request भेजें।</p><ul><li>ABHA Health ID Assistance</li><li>Government Health Scheme Assistance</li><li>e-Sanjeevani Assistance</li><li>Health Portal / Appointment Assistance</li></ul><button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button></div></article>
+<article class="service-card" data-category="agriculture" data-service="Agriculture &amp; Farmer Services" onclick="openServiceModal(this)"><div class="service-icon">🌾</div><div class="service-content"><h3>Agriculture &amp; Farmer Services</h3><p>Service details देखें और सीधे WhatsApp पर request भेजें।</p><ul><li>Kisan Registration Assistance</li><li>PM Fasal Bima Assistance</li><li>Agriculture Scheme Application</li><li>Farmer Scheme Status Check</li><li>Land Map / Naksha Assistance</li><li>Land Record Download</li><li>Mutation Status Check</li><li>Revenue Case Status</li></ul><button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button></div></article>
+<article class="service-card" data-category="property" data-service="Property &amp; Local Services" onclick="openServiceModal(this)"><div class="service-icon">🏠</div><div class="service-content"><h3>Property &amp; Local Services</h3><p>Service details देखें और सीधे WhatsApp पर request भेजें।</p><ul><li>Property Tax Payment Assistance</li><li>Holding Tax Assistance</li><li>Municipality Services</li><li>Trade License Assistance</li><li>Local Permission Application Assistance</li></ul><button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button></div></article>
+<article class="service-card" data-category="legal" data-service="Court &amp; Legal Online Services" onclick="openServiceModal(this)"><div class="service-icon">⚖️</div><div class="service-content"><h3>Court &amp; Legal Online Services</h3><p>Service details देखें और सीधे WhatsApp पर request भेजें।</p><ul><li>eCourts Case Status</li><li>Case Status by CNR Number</li><li>Court Cause List</li><li>Online Grievance / Complaint Filing Assistance</li><li>Legal Document / Application Download</li></ul><button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button></div></article>
+<article class="service-card" data-category="business" data-service="Business &amp; MSME Services" onclick="openServiceModal(this)"><div class="service-icon">💼</div><div class="service-content"><h3>Business &amp; MSME Services</h3><p>Service details देखें और सीधे WhatsApp पर request भेजें।</p><ul><li>GST Registration Assistance</li><li>GST Return Filing Assistance</li><li>Udyam / MSME Registration</li><li>Shop &amp; Establishment Related Assistance</li><li>FSSAI Registration Assistance</li><li>Digital Signature Certificate (DSC) Assistance</li><li>Business PAN / TAN Assistance</li></ul><button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button></div></article>
+<article class="service-card" data-category="postal" data-service="Post &amp; Delivery Services" onclick="openServiceModal(this)"><div class="service-icon">📦</div><div class="service-content"><h3>Post &amp; Delivery Services</h3><p>Service details देखें और सीधे WhatsApp पर request भेजें।</p><ul><li>Speed Post Tracking</li><li>India Post Tracking</li><li>Postal Complaint / Status Assistance</li><li>Courier Tracking Assistance</li></ul><button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button></div></article>
+<article class="service-card" data-category="digital" data-service="Advanced Digital &amp; Computer Services" onclick="openServiceModal(this)"><div class="service-icon">🖥️</div><div class="service-content"><h3>Advanced Digital &amp; Computer Services</h3><p>Service details देखें और सीधे WhatsApp पर request भेजें।</p><ul><li>PDF to Word / Word to PDF</li><li>PDF Compress</li><li>PDF Merge / Split</li><li>Photo Background Remove</li><li>Photo Resize</li><li>Signature Resize</li><li>Document Scan to PDF</li><li>Online Form Upload</li><li>Email Create / Recovery Assistance</li><li>Online Document Correction Assistance</li><li>Hindi ↔ English Typing</li><li>Hindi / English Translation</li><li>Invitation Card Design</li><li>Visiting Card Design</li><li>Poster / Banner Design</li></ul><button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button></div></article>
+<article class="service-card" data-category="govt" data-service="More Citizen &amp; Application Assistance" onclick="openServiceModal(this)"><div class="service-icon">🧾</div><div class="service-content"><h3>More Citizen &amp; Application Assistance</h3><p>Service details देखें और सीधे WhatsApp पर request भेजें।</p><ul><li>Solvency Certificate Assistance</li><li>Family / Parivar Register Related Services</li><li>Government Form Download &amp; Print</li><li>Online Government Application Status Check</li><li>Online Appointment Booking Assistance</li><li>Government Grievance / Complaint Filing</li><li>Online Application Document Correction</li><li>Electricity Bill Payment</li><li>Gas Bill Payment</li><li>Water Bill Payment</li><li>Government Scheme Form Assistance</li></ul><button class="service-btn" onclick="event.stopPropagation();openServiceRequest(this)" type="button">📲 Service Request करें</button></div></article>
+
+</div>
+<section class="suggest">
+<div class="section-kicker">DIRECT WHATSAPP</div>
+<h2>💡 Website Suggestion / Change</h2>
+<p>कोई नई service जोड़नी हो, जानकारी बदलनी हो या website में कोई सुधार सुझाना हो तो नीचे की जानकारी भरकर सीधे WhatsApp पर भेजें।</p>
+<form onsubmit="sendSuggestion(event)">
+<div class="form-grid">
+<div><label for="name">Customer Name *</label><input id="name" placeholder="अपना नाम लिखें" required=""/></div>
+<div><label for="phone">Phone Number *</label><input id="phone" inputmode="numeric" maxlength="10" pattern="[0-9]{10}" placeholder="10-digit mobile number" required="" type="tel"/></div>
+</div>
+<label for="suggestion">Suggestion *</label>
+<textarea id="suggestion" placeholder="अपना suggestion / बदलाव लिखें..." required=""></textarea>
+<button class="primary-btn" type="submit">💬 WhatsApp पर Suggestion भेजें</button>
+</form>
+</section>
+<div aria-hidden="true" class="service-modal" id="serviceModal">
+<div class="service-modal-backdrop" onclick="closeServiceModal()"></div>
+<div aria-modal="true" class="service-modal-dialog" role="dialog">
+<button aria-label="Close" class="modal-close" onclick="closeServiceModal()" type="button">×</button>
+<div class="modal-service-icon" id="modalServiceIcon">📲</div>
+<div class="section-kicker">SERVICE DETAILS</div>
+<h2 id="modalServiceTitle">Service</h2>
+<p>इस service की उपलब्ध सुविधाएँ नीचे दी गई हैं। Request भेजने के लिए नीचे button पर click करें।</p>
+<ul id="modalServiceList"></ul>
+<button class="primary-btn" onclick="requestServiceFromModal()" type="button">📲 Service Request करें</button>
+</div>
+</div>
+</main>
+
+<section class="feedback-box">
+<h2>⭐ Customer Feedback &amp; Rating</h2>
+<div class="rating-summary" id="ratingSummary">अभी कोई rating नहीं है।</div>
+<p>हमारी service कैसी लगी? अपनी rating और feedback जरूर दें।</p>
+<div class="star-rating">
+<input id="s5" name="tsc_rating" type="radio" value="5"/><label for="s5">★</label>
+<input id="s4" name="tsc_rating" type="radio" value="4"/><label for="s4">★</label>
+<input id="s3" name="tsc_rating" type="radio" value="3"/><label for="s3">★</label>
+<input id="s2" name="tsc_rating" type="radio" value="2"/><label for="s2">★</label>
+<input id="s1" name="tsc_rating" type="radio" value="1"/><label for="s1">★</label>
+</div>
+<div class="form-grid">
+<input id="feedbackName" placeholder="आपका नाम" required=""/>
+</div>
+<textarea id="feedbackText" placeholder="अपना feedback लिखें..." required=""></textarea>
+<button class="primary-btn" onclick="submitTscFeedback()" type="button">⭐ Feedback Submit करें</button>
+<div id="feedbackMsg"></div><div id="feedbackList"></div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL='https://kllohqaaukmpzgdrhynw.supabase.co';
+const SUPABASE_KEY='sb_publishable_u3_GXtIgYbVyhTdBTLslww_5Xp0Qv82';
+const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+function escf(s){return String(s).replace(/[&<>\"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#039;'}[m]))}
+async function loadTscFeedback(){
+ const {data,error}=await supabaseClient.from('Feedback').select('name,rating,feedback,created_at').order('created_at',{ascending:false}).limit(100);
+ const s=document.getElementById('ratingSummary'),b=document.getElementById('feedbackList');
+ if(error){s.textContent='Feedback load नहीं हो सका।';b.innerHTML='';return}
+ if(!data||!data.length){s.textContent='अभी कोई rating नहीं है।';b.innerHTML='';return}
+ const avg=data.reduce((q,x)=>q+Number(x.rating),0)/data.length;
+ s.textContent='⭐ '+avg.toFixed(1)+'/5 • '+data.length+' Reviews';
+ b.innerHTML=data.map(x=>'<div class="feedback-item"><b>'+escf(x.name)+'</b><br>'+('⭐'.repeat(Number(x.rating)))+('☆'.repeat(5-Number(x.rating)))+'<br>'+escf(x.feedback)+'</div>').join('');
+}
+async function submitTscFeedback(){
+ const r=document.querySelector('input[name="tsc_rating"]:checked'),n=document.getElementById('feedbackName').value.trim(),x=document.getElementById('feedbackText').value.trim();
+ if(!r){alert('कृपया 1 से 5 Star rating चुनें।');return} if(!n){alert('कृपया अपना नाम लिखें।');return} if(!x){alert('कृपया feedback लिखें।');return}
+ const {error}=await supabaseClient.from('Feedback').insert([{name:n,rating:Number(r.value),feedback:x}]);
+ if(error){alert('Feedback submit नहीं हो सका। कृपया फिर से कोशिश करें।');return}
+ document.getElementById('feedbackName').value='';document.getElementById('feedbackText').value='';document.querySelectorAll('input[name="tsc_rating"]').forEach(x=>x.checked=false);document.getElementById('feedbackMsg').textContent='धन्यवाद! आपका feedback वेबसाइट पर submit हो गया।';
+ loadTscFeedback();
+}
+document.addEventListener('DOMContentLoaded',loadTscFeedback);
+</script>
+<script>
+function sendSuggestion(e){
+  e.preventDefault();
+  const n=document.getElementById('name').value.trim();
+  const p=document.getElementById('phone').value.trim();
+  const s=document.getElementById('suggestion').value.trim();
+  if(!n || !/^[0-9]{10}$/.test(p) || !s){alert('कृपया नाम, सही 10-digit phone number और suggestion भरें।');return}
+  const msg='Website Suggestion / Change\nName: '+n+'\nPhone: '+p+'\nSuggestion: '+s;
+  window.open('https://wa.me/918540844244?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
+
+
+<footer class="site-footer-professional">
+  <div class="footer-contact-professional">
+    <div class="footer-features" aria-label="Service highlights">
+      <span>✅ Fast</span><span>✅ Reliable</span><span>✅ Affordable</span><span>✅ Low Price</span>
+    </div>
+    <div class="footer-value-points">
+      <div><strong>⚡ Simple Process<br><span style="display:block;margin-top:5px;font-size:12px;color:#cbd5e1;font-weight:700">🤝 आसान प्रक्रिया, भरोसेमंद सेवा</span></strong></div>
+      <div><strong>💬 Direct Support</strong><p>WhatsApp पर सीधे request और enquiry भेजें।</p></div>
+      <div><strong>🔒 Customer First</strong><p>स्पष्ट जानकारी और आसान communication पर focus।</p></div>
+    </div>
+    <div class="footer-brand-line">𝕿𝖊𝖈𝖍 𝖘𝖔𝖑𝖚𝖙𝖎𝖔𝖓𝖘 𝖈𝖆𝖋𝖊 &amp; 𝕴𝖓𝖙𝖊𝖗𝖓𝖊𝖙 𝖈𝖆𝖋𝖊</div>
+    <div class="footer-contact-line">📞 8540844244 <span>•</span> ✉️ akmth3532@gmail.com</div>
+  </div>
+
+  <nav class="footer-policy-links" aria-label="Footer information">
+    <button type="button" data-info-modal="about">About Us</button>
+    <span class="footer-separator">|</span>
+    <button type="button" data-info-modal="privacy">Privacy Policy</button>
+    <span class="footer-separator">|</span>
+    <button type="button" data-info-modal="terms">Terms &amp; Conditions</button>
+  </nav>
+
+  <div class="footer-copy-professional">© 2026 Tech Solutions Cafe • Digital Services &amp; Internet Cafe</div>
+</footer>
+
+<div class="info-modal" id="infoModal" aria-hidden="true">
+  <div class="info-modal-backdrop" data-info-close></div>
+  <div class="info-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle">
+    <button class="info-modal-close" type="button" data-info-close aria-label="Close">×</button>
+    <div class="info-modal-accent"></div>
+    <h2 id="infoModalTitle"></h2>
+    <div id="infoModalContent" class="info-modal-content"></div>
+  </div>
+</div>
+
+
+<script>
+let activeServiceCard=null;
+function openServiceModal(card){activeServiceCard=card;document.getElementById('modalServiceTitle').textContent=card.getAttribute('data-service')||'Service';document.getElementById('modalServiceIcon').textContent=card.querySelector('.service-icon')?.textContent.trim()||'📲';document.getElementById('modalServiceList').innerHTML=card.querySelector('.service-content ul')?.innerHTML||'';document.getElementById('serviceModal').classList.add('show');document.getElementById('serviceModal').setAttribute('aria-hidden','false');document.body.classList.add('modal-open')}
+function closeServiceModal(){const m=document.getElementById('serviceModal');m.classList.remove('show');m.setAttribute('aria-hidden','true');document.body.classList.remove('modal-open');activeServiceCard=null}
+function requestServiceFromModal(){if(!activeServiceCard)return;const service=activeServiceCard.getAttribute('data-service')||'Service';const msg='Service Request\nService: '+service+'\nI want to know more about this service';window.open('https://wa.me/918540844244?text='+encodeURIComponent(msg),'_blank')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeServiceModal()});
+</script>
+<script>
+(function(){
+ const cards=[...document.querySelectorAll('.service-card')], search=document.getElementById('serviceSearch'), count=document.getElementById('serviceCount');
+ let active='all';
+ function apply(){
+   const q=(search?.value||'').trim().toLowerCase(); let shown=0;
+   cards.forEach(card=>{const okCat=active==='all'||card.dataset.category===active; const okText=!q||card.innerText.toLowerCase().includes(q); const show=okCat&&okText; card.classList.toggle('is-hidden',!show); if(show)shown++;});
+   if(count) count.textContent=shown+' service'+(shown===1?'':'s')+' available';
+ }
+ document.querySelectorAll('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{active=btn.dataset.filter;document.querySelectorAll('.filter-btn').forEach(x=>x.classList.remove('active'));btn.classList.add('active');apply();}));
+ search?.addEventListener('input',apply);
+ apply();
+})();
+</script>
+
+<script id="professional-footer-info-script">
+(function(){
+  const data = {
+    about: {
+      title: "About Us",
+      html: `
+        <p><strong>Tech Solutions Cafe &amp; Internet Cafe</strong> एक customer-focused digital service center है, जहाँ online applications, document assistance, government-related digital services, printing और everyday internet services को आसान और सुविधाजनक तरीके से उपलब्ध कराने का प्रयास किया जाता है।</p>
+        <p>हमारा उद्देश्य customers को clear information, simple service request process और responsive support देना है। किसी service की जानकारी या assistance के लिए आप बिना website registration के सीधे WhatsApp के माध्यम से request भेज सकते हैं।</p>
+      `
+    },
+    privacy: {
+      title: "Privacy Policy",
+      html: `
+        <p><strong>हम आपकी privacy का सम्मान करते हैं।</strong> Website पर दी गई जानकारी का उपयोग requested service, enquiry, communication और support उपलब्ध कराने के उद्देश्य से किया जाता है।</p>
+        <p>हम अनावश्यक रूप से personal information collect या publicly display नहीं करते। जहाँ service के लिए WhatsApp/contact details की आवश्यकता होती है, उनका उपयोग request को process करने और आपसे संपर्क करने के लिए किया जाता है।</p>
+        <p>किसी भी sensitive document को केवल आवश्यक service purpose के लिए साझा करें और अनावश्यक personal information भेजने से बचें।</p>
+        <p>Privacy से संबंधित किसी प्रश्न के लिए दिए गए contact details पर हमसे संपर्क करें।</p>
+      `
+    },
+    terms: {
+      title: "Terms & Conditions",
+      html: `
+        <p><strong>Website Use:</strong> इस website का उपयोग केवल lawful digital services, information, enquiry और assistance के लिए करें।</p>
+        <p><strong>Information Accuracy:</strong> Service request देते समय सही और complete information देना customer की जिम्मेदारी है। गलत जानकारी के कारण होने वाली समस्या के लिए customer स्वयं जिम्मेदार होगा।</p>
+        <p><strong>Service Processing:</strong> Government portals, departments और third-party systems के rules, availability, processing time और final approval हमारे control में नहीं होते। किसी application/document का final approval संबंधित authority पर निर्भर करता है।</p>
+        <p><strong>Payments:</strong> जहाँ applicable हो, किसी service की fee या charges service शुरू करने से पहले स्पष्ट किए जा सकते हैं। बिना पुष्टि के किसी अनजान व्यक्ति को payment न करें।</p>
+        <p><strong>Changes:</strong> Services, charges, availability और website information आवश्यकता के अनुसार बदली जा सकती है।</p>
+        <p>Website का उपयोग करके आप इन basic terms को स्वीकार करते हैं। किसी clarification के लिए हमसे contact करें।</p>
+      `
+    }
+  };
+
+  const modal = document.getElementById('infoModal');
+  const title = document.getElementById('infoModalTitle');
+  const content = document.getElementById('infoModalContent');
+
+  document.querySelectorAll('[data-info-modal]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const item = data[this.getAttribute('data-info-modal')];
+      if(!item) return;
+      title.textContent = item.title;
+      content.innerHTML = item.html;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    });
+  });
+
+  function closeModal(){
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+  document.querySelectorAll('[data-info-close]').forEach(function(el){
+    el.addEventListener('click', closeModal);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  });
+})();
+</script>
+
+
+
+<!-- Logo Upload System: normal website appearance unchanged. Open with ?logo-admin=1 to manage logo. -->
+<style id="tsc-logo-upload-system">
+#tscLogoAdmin{display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.72);align-items:center;justify-content:center;padding:18px;font-family:Arial,sans-serif}
+#tscLogoAdmin .box{width:min(430px,94vw);background:#0f172a;color:#fff;border:1px solid rgba(34,211,238,.45);border-radius:18px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+#tscLogoAdmin h3{margin:0 0 8px;font-size:20px}#tscLogoAdmin p{font-size:13px;color:#cbd5e1;line-height:1.5;margin:0 0 14px}
+#tscLogoAdmin input[type=file]{width:100%;padding:10px;border:1px dashed #64748b;border-radius:10px;background:#111827;color:#fff;box-sizing:border-box}
+#tscLogoAdmin .row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+#tscLogoAdmin button{border:0;border-radius:10px;padding:10px 13px;font-weight:700;cursor:pointer}
+#tscLogoSave{background:#22d3ee;color:#082f49}#tscLogoReset{background:#334155;color:#fff}#tscLogoClose{background:#ef4444;color:#fff}
+#tscLogoPreview{display:block;max-width:180px;max-height:140px;margin:14px auto 0;border-radius:12px;object-fit:contain;background:#fff;padding:4px}
+#tscLogoStatus{font-size:12px;margin-top:10px;color:#a7f3d0}
+</style>
+<div id="tscLogoAdmin" aria-hidden="true">
+  <div class="box">
+    <h3>🖼️ Logo Upload</h3>
+    <p>Naya logo select karke Save karein. Normal website par ye panel nahi dikhega.</p>
+    <input id="tscLogoFile" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml">
+    <img id="tscLogoPreview" alt="Logo preview" style="display:none">
+    <div class="row">
+      <button id="tscLogoSave" type="button">Save Logo</button>
+      <button id="tscLogoReset" type="button">Current Logo Restore</button>
+      <button id="tscLogoClose" type="button">Close</button>
+    </div>
+    <div id="tscLogoStatus"></div>
+  </div>
+</div>
+<script id="tsc-logo-upload-script">
+(function(){
+  const DB='tsc_logo_db', STORE='settings', KEY='logo';
+  function openDB(){return new Promise((resolve,reject)=>{const r=indexedDB.open(DB,1);r.onupgradeneeded=()=>r.result.createObjectStore(STORE);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})}
+  async function getLogo(){try{const db=await openDB();return await new Promise((res,rej)=>{const q=db.transaction(STORE,'readonly').objectStore(STORE).get(KEY);q.onsuccess=()=>res(q.result||null);q.onerror=()=>rej(q.error)})}catch(e){return null}}
+  async function setLogo(v){const db=await openDB();return new Promise((res,rej)=>{const q=db.transaction(STORE,'readwrite').objectStore(STORE).put(v,KEY);q.onsuccess=()=>res();q.onerror=()=>rej(q.error)})}
+  async function delLogo(){const db=await openDB();return new Promise((res,rej)=>{const q=db.transaction(STORE,'readwrite').objectStore(STORE).delete(KEY);q.onsuccess=()=>res();q.onerror=()=>rej(q.error)})}
+  async function applyLogo(){const data=await getLogo();if(!data)return;document.querySelectorAll('img.logo').forEach(i=>{i.src=data})}
+  document.addEventListener('DOMContentLoaded',async function(){
+    await applyLogo();
+    if(new URLSearchParams(location.search).get('logo-admin')!=='1')return;
+    const panel=document.getElementById('tscLogoAdmin'),file=document.getElementById('tscLogoFile'),preview=document.getElementById('tscLogoPreview'),status=document.getElementById('tscLogoStatus');
+    panel.style.display='flex';panel.setAttribute('aria-hidden','false');
+    let selected='';
+    file.addEventListener('change',()=>{const f=file.files&&file.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{selected=rd.result;preview.src=selected;preview.style.display='block';status.textContent='Logo ready. Save Logo par click karein.'};rd.readAsDataURL(f)});
+    document.getElementById('tscLogoSave').onclick=async()=>{if(!selected){status.textContent='Pehle logo select karein.';return}await setLogo(selected);await applyLogo();status.textContent='Logo save ho gaya. Is browser me website par naya logo dikhega.'};
+    document.getElementById('tscLogoReset').onclick=async()=>{await delLogo();location.reload()};
+    document.getElementById('tscLogoClose').onclick=()=>{panel.style.display='none';history.replaceState(null,'',location.pathname+location.hash)};
+  });
+})();
+</script>
+
+</body>
+</html>
